@@ -1,0 +1,65 @@
+<template>
+    <template if:true={setupNotComplete}>
+        <template if:false={loading}>
+            <div class="container">
+                <div class="activitiesHeader">
+                    <div class="headerIconCol">
+                        <div class="left-content">
+                            <lightning-icon class="warning" icon-name="utility:warning"></lightning-icon>
+                            <div class="heading-container"><b class="activitiesHeading">Gift Commitment Setup</b></div>
+                        </div>
+                        <div>
+                            <lightning-button-icon icon-name="utility:refresh" slot="actions" onclick={refreshDetails} size="small" alternative-text="View More" class="slds-m-left_xx-small"></lightning-button-icon>
+                        </div>
+                    </div>
+                </div>
+                <template if:true={refresh}>
+                    <div class="container loading" style="position:relative;">
+                        <lightning-spinner size="small" alternative-text="Loading..."></lightning-spinner>
+                    </div>
+                </template>
+                <template if:false={refresh}>
+                    <table>
+                        <tbody>
+                            <tr class="rowStyle">
+                                <td class="iconCol">
+                                    <template if:false={hasSchedules}>
+                                        <lightning-icon class="warning" icon-name="utility:routing_offline" size="xx-small"></lightning-icon>
+                                    </template>
+                                    <template if:true={hasSchedules}>
+                                        <lightning-icon class="success" icon-name="utility:success" size="xx-small"></lightning-icon>
+                                    </template>
+                                </td>
+                                <td class="contentCol">
+                                    <p class="nameHeader">Manage Gift Commitment Schedules</p>
+                                    <p class="description">Create or modify one or more schedules</p>
+                                </td>
+                                <td class="buttonCol">
+                                    <button class="manageButton" onclick={openFlow} data-flow="manageschedules">Manage</button>
+                                </td>
+                            </tr>
+                            <tr class="rowStyle">
+                                <td class="iconCol">
+                                    <template if:false={hasDesignations}>
+                                        <lightning-icon class="warning" icon-name="utility:routing_offline" size="xx-small"></lightning-icon>    
+                                    </template>
+                                    <template if:true={hasDesignations}>
+                                        <lightning-icon class="success" icon-name="utility:success" size="xx-small"></lightning-icon>
+                                    </template>
+                                </td>
+                                <td class="contentCol">
+                                    <p class="nameHeader">Manage Gift Default Designations</p>
+                                    <p class="description">Create or modify one or more default designations</p>
+                                </td>
+                                <td class="buttonCol">
+                                    <button class="manageButton" onclick={openFlow} data-flow="managedesignations">Manage</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </template>
+                <div class="footer"></div>
+            </div>
+        </template>
+    </template>
+</template>

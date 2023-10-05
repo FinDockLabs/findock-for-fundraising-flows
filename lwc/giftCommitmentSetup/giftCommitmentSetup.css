@@ -1,0 +1,77 @@
+.container {
+    background-color: #fff;
+}
+.activitiesHeader {
+    background-color: #F3F3F3;
+    margin-bottom: 1%;
+}
+.left-content {
+    display: flex;
+    align-items: center;
+}
+.headerIconCol {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.8%;
+}
+.footer {
+    padding: 0.5%;
+}
+.warning {
+    --sds-c-icon-color-foreground-default: #FE9339;
+}
+.heading-container {
+    flex: 1;
+    margin-left: 0.625rem;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.activitiesHeading {
+    font-size: 1rem;
+    color: #001639;
+    font-weight: 700;
+}
+.rowStyle {
+    padding: 2%;
+}
+.iconCol {
+    width: 8%;
+    padding: 4%;
+    margin-top: 0.8%;
+}
+.contentCol {
+    width: 68%;
+    padding-left: 2%;
+}
+.nameHeader {
+    font-weight: 400;
+    font-size: 1rem;
+}
+.description {
+    font-weight: 400;
+    font-size: 0.7rem;
+}
+.buttonCol {
+    width: 24%;
+}
+.success {
+    --sds-c-icon-color-foreground-default: #2E844A;
+}
+.manageButton {
+    max-width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: white;
+    border-color: black;
+    border-radius: 0.25rem;
+    color: #0176D3;
+    border-width: 0.5px;
+    height: 2rem;
+    padding: 0% 7% 0% 7%;
+    margin-left: 0.5rem;
+}
+.loading {
+    padding-top: 3%;
+}

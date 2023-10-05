@@ -1,0 +1,15 @@
+<template>
+    <!-- <lightning-modal-header label="teset">test</lightning-modal-header> -->
+    <lightning-modal-body>
+        <template if:false={loading}>
+            <lightning-flow
+            flow-api-name={flowName}
+            flow-input-variables={inputVariables}
+            onstatuschange={handleStatusChange}
+            ></lightning-flow>
+        </template>
+    </lightning-modal-body>
+    <!-- <lightning-modal-footer>
+        footer
+    </lightning-modal-footer> -->
+</template>
