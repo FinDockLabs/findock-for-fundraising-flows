@@ -65,6 +65,7 @@ quickActions/GiftCommitment.fd_upgrade_downgrade.quickAction
 ## Configuration
 - Activate the FinDock Fundraising Flows
 - Assign the Gift Commitment Lightning Record page to profiles or as organization default to include the custom Gift Commitment Management LWC component
+- Replace all Salesforce versions of the components like buttons with the FinDock versions
 
 ## Contributing
 
@@ -73,6 +74,7 @@ When contributing to this repository, please first discuss the change you wish t
 ## Support
 
 FinDock Labs is a non-supported group in FinDock that releases applications. Despite the name, assistance for any of these applications is not provided by FinDock Support because they are not officially supported features. For a list of these apps, visit the FinDock Labs account on Github.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details
