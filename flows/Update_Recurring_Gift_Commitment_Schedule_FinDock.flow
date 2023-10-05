@@ -1892,7 +1892,7 @@
             <targetReference>GetGiftCommitments</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <subflows>
         <description>Gets active, draft, and paused gift commitment records with a donor ID that matches recordId and a schedule type of Recurring. Stores the results in the GiftCommitments from GetGiftCommitments record collection.</description>
         <name>GetGiftCommitments</name>
