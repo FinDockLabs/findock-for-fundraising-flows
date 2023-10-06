@@ -63,10 +63,15 @@ quickActions/GiftCommitment.fd_upgrade_downgrade.quickAction
 - any other deployment method you prefer.
 
 ## Configuration
-- DEACTIVATE the Salesforce Fundraising Flows
-- ACTIVATE the FinDock Fundraising Flows
-- Assign the Gift Commitment Lightning Record page to profiles or as organization default to include the custom Gift Commitment Management LWC component
-- Replace all Salesforce versions of the components like buttons with the FinDock versions
+- Assign the deployed Gift Commitment Lightning Record page to profiles or as organization default to include the custom Gift Commitment Management LWC component
+- Assign the permission set `FinDock Fundraising Flows` to the right users
+- Replace all Salesforce versions of the components like buttons with the FinDock versions:
+  - Got to the Salesforce Layout editor for Gift Commitment
+  - Under Salesforce Mobile and Lightning Experience Actions press "override actions"
+  - Remove the following default actions and replace them with the FinDock Mobile & Lightning Actions:
+    - `Manage Gift Commitment Schedules`
+    - `Upgrade | Downgrade`
+    - `Update Payment Method`
 
 ## Contributing
 
