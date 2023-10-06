@@ -63,7 +63,8 @@ quickActions/GiftCommitment.fd_upgrade_downgrade.quickAction
 - any other deployment method you prefer.
 
 ## Configuration
-- Activate the FinDock Fundraising Flows
+- DEACTIVATE the Salesforce Fundraising Flows
+- ACTIVATE the FinDock Fundraising Flows
 - Assign the Gift Commitment Lightning Record page to profiles or as organization default to include the custom Gift Commitment Management LWC component
 - Replace all Salesforce versions of the components like buttons with the FinDock versions
 
