@@ -1652,7 +1652,7 @@
                     <inputParameters>
                         <name>topValue</name>
                         <value>
-                            <elementReference>UpdatePaymentMethodSelectSchdDataTable.firstSelectedRow.Payment_Method__c</elementReference>
+                            <elementReference>UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.Payment_Method__c</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1664,7 +1664,7 @@
                     <inputParameters>
                         <name>middleValue</name>
                         <value>
-                            <elementReference>UpdatePaymentMethodSelectSchdDataTable.firstSelectedRow.Payment_Processor__c</elementReference>
+                            <elementReference>UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.Payment_Processor__c</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1682,7 +1682,7 @@
                     <inputParameters>
                         <name>bottomValue</name>
                         <value>
-                            <elementReference>UpdatePaymentMethodSelectSchdDataTable.firstSelectedRow.Target__c</elementReference>
+                            <elementReference>UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.Target__c</elementReference>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1725,7 +1725,7 @@
                     <inputParameters>
                         <name>recordId</name>
                         <value>
-                            <elementReference>UpdatePaymentMethodSelectSchdDataTable.firstSelectedRow.Payment_Profile__c</elementReference>
+                            <elementReference>UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.Payment_Profile__c</elementReference>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1757,7 +1757,7 @@
                     <inputParameters>
                         <name>recordId</name>
                         <value>
-                            <elementReference>UpdatePaymentMethodSelectSchdDataTable.firstSelectedRow.Mandate__c</elementReference>
+                            <elementReference>UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.Mandate__c</elementReference>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
