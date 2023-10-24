@@ -44,9 +44,9 @@
         <name>PermissionSet</name>
     </types>
     <types>
-        <members>GiftCommitment.Manage_Gift_Commitment_Schedules</members>
-        <members>GiftCommitment.fd_update_paymentmethod</members>
-        <members>GiftCommitment.fd_upgrade_downgrade</members>
+        <members>GiftCommitment.FinDock_Manage_Gift_Commitment_Schedules</members>
+        <members>GiftCommitment.FinDock_update_paymentmethod</members>
+        <members>GiftCommitment.FinDock_upgrade_downgrade</members>
         <name>QuickAction</name>
     </types>
     <version>59.0</version>
