@@ -136,14 +136,14 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>UpdateGiftCommitmentSchedule.Mandate__c</assignToReference>
+            <assignToReference>UpdateGiftCommitmentSchedule.fdfr__Mandate__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>FinDockMandate.recordId</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>UpdateGiftCommitmentSchedule.Payment_Profile__c</assignToReference>
+            <assignToReference>UpdateGiftCommitmentSchedule.fdfr__Payment_Profile__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>FinDockPaymentProfile.recordId</elementReference>
@@ -251,14 +251,14 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>UpdateGiftCommitmentSchedule.Mandate__c</assignToReference>
+            <assignToReference>UpdateGiftCommitmentSchedule.fdfr__Mandate__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>FinDockMandateDownUpgrade.recordId</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>UpdateGiftCommitmentSchedule.Payment_Profile__c</assignToReference>
+            <assignToReference>UpdateGiftCommitmentSchedule.fdfr__Payment_Profile__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>FinDockPaymentProfileDownUpgrade.recordId</elementReference>
@@ -1248,7 +1248,7 @@
                     <inputParameters>
                         <name>fieldApiName</name>
                         <value>
-                            <stringValue>Payment_Profile__c</stringValue>
+                            <stringValue>fdfr__Payment_Profile__c</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1266,7 +1266,7 @@
                     <inputParameters>
                         <name>recordId</name>
                         <value>
-                            <elementReference>UpdatePaymentMethodSelectSchdDataTable.firstSelectedRow.Payment_Profile__c</elementReference>
+                            <elementReference>UpdatePaymentMethodSelectSchdDataTable.firstSelectedRow.fdfr__Payment_Profile__c</elementReference>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1280,7 +1280,7 @@
                     <inputParameters>
                         <name>fieldApiName</name>
                         <value>
-                            <stringValue>Mandate__c</stringValue>
+                            <stringValue>fdfr__Mandate__c</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1298,7 +1298,7 @@
                     <inputParameters>
                         <name>recordId</name>
                         <value>
-                            <elementReference>UpdatePaymentMethodSelectSchdDataTable.firstSelectedRow.Mandate__c</elementReference>
+                            <elementReference>UpdatePaymentMethodSelectSchdDataTable.firstSelectedRow.fdfr__Mandate__c</elementReference>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1707,7 +1707,7 @@
                     <inputParameters>
                         <name>fieldApiName</name>
                         <value>
-                            <stringValue>Payment_Profile__c</stringValue>
+                            <stringValue>fdfr__Payment_Profile__c</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1725,7 +1725,7 @@
                     <inputParameters>
                         <name>recordId</name>
                         <value>
-                            <elementReference>UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.Payment_Profile__c</elementReference>
+                            <elementReference>UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.fdfr__Payment_Profile__c</elementReference>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1739,7 +1739,7 @@
                     <inputParameters>
                         <name>fieldApiName</name>
                         <value>
-                            <stringValue>Mandate__c</stringValue>
+                            <stringValue>fdfr__Mandate__c</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1757,7 +1757,7 @@
                     <inputParameters>
                         <name>recordId</name>
                         <value>
-                            <elementReference>UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.Mandate__c</elementReference>
+                            <elementReference>UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.fdfr__Mandate__c</elementReference>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
