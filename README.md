@@ -2,6 +2,11 @@
   <img alt="Deploy to Salesforce"
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png"></a>
 
+```text
+NOTE: to be able to deploy this project to your Salesforce production environment your overall test code coverage needs to meet Salesforce thresholds.
+Although this project has 100% coverage, existing custom code in your environment might push the overall coverage below the threshold. 
+```
+
 # FinDock for Fundraising Flows
 
 A quick description for what this repo contains:
