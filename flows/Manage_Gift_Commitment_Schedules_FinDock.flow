@@ -1324,19 +1324,19 @@
                     <fieldType>ObjectProvided</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>RecurringGiftCmtScheduleRequest.Payment_Method__c</objectFieldReference>
+                    <objectFieldReference>RecurringGiftCmtScheduleRequest.fdff__Payment_Method__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>RecurringGiftCmtScheduleRequest.Payment_Processor__c</objectFieldReference>
+                    <objectFieldReference>RecurringGiftCmtScheduleRequest.fdff__Payment_Processor__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>RecurringGiftCmtScheduleRequest.Target__c</objectFieldReference>
+                    <objectFieldReference>RecurringGiftCmtScheduleRequest.fdff__Target__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1353,13 +1353,13 @@
                     <fieldType>ObjectProvided</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>RecurringGiftCmtScheduleRequest.Payment_Profile__c</objectFieldReference>
+                    <objectFieldReference>RecurringGiftCmtScheduleRequest.fdff__Payment_Profile__c</objectFieldReference>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>RecurringGiftCmtScheduleRequest.Mandate__c</objectFieldReference>
+                    <objectFieldReference>RecurringGiftCmtScheduleRequest.fdff__Mandate__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
