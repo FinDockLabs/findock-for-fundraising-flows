@@ -30,9 +30,9 @@ export default class FlowModal extends LightningModal {
     }
     get action() {
         switch (this.quickActionAPIName ) {
-            case 'fd_update_paymentmethod':
+            case 'FinDock_update_paymentmethod':
                 return 'UpdatePaymentMethod';
-            case 'fd_upgrade_downgrade':
+            case 'FinDocok_upgrade_downgrade':
                 return '';
             default:
                 return '';
@@ -41,9 +41,9 @@ export default class FlowModal extends LightningModal {
     
     get flowName() {
         switch ( this.quickActionAPIName ) {
-            case 'fd_upgrade_downgrade':
+            case 'FinDock_upgrade_downgrade':
                 return this._manageFlow;
-            case 'fd_update_paymentmethod':
+            case 'FinDock_update_paymentmethod':
                 return this._updateFlow;
             case 'designation':
                 return this._designationFlow;
@@ -59,7 +59,7 @@ export default class FlowModal extends LightningModal {
     }
 
     get inputVariables() {
-        if ( this.quickActionAPIName == 'fd_update_paymentmethod' ) {
+        if ( this.quickActionAPIName == 'FinDock_update_paymentmethod' ) {
             return [
                 {
                     name: 'recordId',
