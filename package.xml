@@ -49,5 +49,5 @@
         <members>GiftCommitment.FinDock_upgrade_downgrade</members>
         <name>QuickAction</name>
     </types>
-    <version>59.0</version>
+    <version>60.0</version>
 </Package>
