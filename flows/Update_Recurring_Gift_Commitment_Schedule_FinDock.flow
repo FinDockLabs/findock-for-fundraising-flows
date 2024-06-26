@@ -5,7 +5,7 @@
         <name>UpdateRecurringGiftCommitmentSchedule</name>
         <label>Update Recurring Gift Commitment Schedule</label>
         <locationX>710</locationX>
-        <locationY>866</locationY>
+        <locationY>974</locationY>
         <actionName>manageRcrGiftCmtSchd</actionName>
         <actionType>manageRcrGiftCmtSchd</actionType>
         <faultConnector>
@@ -34,7 +34,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
         <versionSegment>1</versionSegment>
     </actionCalls>
-    <apiVersion>60.0</apiVersion>
+    <apiVersion>61.0</apiVersion>
     <assignments>
         <description>Sets the parameters on UpdateGiftCommitmentSchedule such as StartDate and EndDate from the values of UpdateDatesScreen.</description>
         <name>CreateUpdateDatesRequest</name>
@@ -99,7 +99,7 @@
         <name>CreateUpdatePaymentMethodRequest</name>
         <label>Create Update Payment Method Request</label>
         <locationX>842</locationX>
-        <locationY>674</locationY>
+        <locationY>782</locationY>
         <assignmentItems>
             <assignToReference>UpdateGiftCommitmentSchedule.CampaignId</assignToReference>
             <operator>Assign</operator>
@@ -193,7 +193,7 @@
         <name>CreateUpgradeDowngradeRequest</name>
         <label>Create Upgrade Downgrade Request</label>
         <locationX>1106</locationX>
-        <locationY>674</locationY>
+        <locationY>782</locationY>
         <assignmentItems>
             <assignToReference>UpdateGiftCommitmentSchedule.TransactionPeriod</assignToReference>
             <operator>Assign</operator>
@@ -302,9 +302,9 @@
         <assignmentItems>
             <assignToReference>UpdateGiftCommitmentSchedule.OutreachSourceCodeId</assignToReference>
             <operator>Assign</operator>
-                <value>
-                    <elementReference>UpgradeDowngradeOutreachSourceCodeId.recordId</elementReference>
-                </value>
+            <value>
+                <elementReference>UpgradeDowngradeOutreachSourceCodeId.recordId</elementReference>
+            </value>
         </assignmentItems>
         <connector>
             <targetReference>UpdateRecurringGiftCommitmentSchedule</targetReference>
@@ -422,15 +422,15 @@
         </value>
     </constants>
     <decisions>
-        <description>Determines whether the gift commitments retrieved in GetGiftCommitments are valid and have the required action to be performed on them.</description>
+        <description>Determines the state of the gift commitments retrieved in GetGiftCommitments.</description>
         <name>IsGiftCmtValidWithAnAction</name>
-        <label>Is Gift Commitment Valid With An Action?</label>
+        <label>What is Gift Commitment State?</label>
         <locationX>974</locationX>
         <locationY>242</locationY>
         <defaultConnector>
             <targetReference>SelectActionScreen</targetReference>
         </defaultConnector>
-        <defaultConnectorLabel>No Action (Default)</defaultConnectorLabel>
+        <defaultConnectorLabel>Other</defaultConnectorLabel>
         <rules>
             <name>HasError</name>
             <conditionLogic>and</conditionLogic>
@@ -444,10 +444,10 @@
             <connector>
                 <targetReference>DisplayErrorScheduleNotFoundScreen</targetReference>
             </connector>
-            <label>No</label>
+            <label>Error</label>
         </rules>
         <rules>
-            <name>HasUpdateScheduleAction</name>
+            <name>HasScheduleAction</name>
             <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>action</leftValueReference>
@@ -473,7 +473,7 @@
             <connector>
                 <targetReference>GetGiftCommitmentSchedules</targetReference>
             </connector>
-            <label>Yes</label>
+            <label>Has Schedule Action</label>
         </rules>
     </decisions>
     <decisions>
@@ -483,7 +483,7 @@
         <locationX>710</locationX>
         <locationY>458</locationY>
         <defaultConnector>
-            <targetReference>UpgradeDowngradeScreen</targetReference>
+            <targetReference>ChangeGiftCommitmentScheduleScreen</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Upgrade Or Downgrade</defaultConnectorLabel>
         <rules>
@@ -527,7 +527,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>UpdatePaymentMethodScreen</targetReference>
+                <targetReference>SelectGiftCommitmentScheduleScreen</targetReference>
             </connector>
             <label>Update Payment Method</label>
         </rules>
@@ -695,6 +695,110 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <screens>
+        <description>Allows the flow user to change the schedule when upgrading or downgrading a gift commitment. The user can select a recurring gift commitment schedule that has Active, Paused, or Draft status.</description>
+        <name>ChangeGiftCommitmentScheduleScreen</name>
+        <label>Change Gift Commitment Schedule</label>
+        <locationX>1106</locationX>
+        <locationY>566</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>UpgradeDowngradeScreen</targetReference>
+        </connector>
+        <fields>
+            <name>ChangeGiftCommitmentScheduleHeaderDisplayText</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-size: 16px;&quot;&gt;Change a Schedule&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>AvailableSchedulesForUpgradeDowngradeSection</name>
+            <fieldText>Available Gift Commitment Schedules</fieldText>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>AvailableSchedulesForUpgradeDowngradeSection_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>UpgradeDowngradeSchdInformation</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Ongoing and future Gift Commitment Schedules for recurring Gift Commitments with an active, draft, or paused status are shown.&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>UpgradeDowngradeSelectSchdDataTable</name>
+            <dataTypeMappings>
+                <typeName>T</typeName>
+                <typeValue>GiftCommitmentSchedule</typeValue>
+            </dataTypeMappings>
+            <extensionName>flowruntime:datatable</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>$Label.UpdateRecurringScheduleFlow.scheduleSelectionDatatableHeader</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>selectionMode</name>
+                <value>
+                    <stringValue>SINGLE_SELECT</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>minRowSelection</name>
+                <value>
+                    <numberValue>1.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>shouldDisplayLabel</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>tableData</name>
+                <value>
+                    <elementReference>GetGiftCommitmentSchedules</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>maxRowSelection</name>
+                <value>
+                    <numberValue>1.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>selectedRows</name>
+                <value>
+                    <elementReference>GetGiftCommitmentSchedules</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>columns</name>
+                <value>
+                    <stringValue>[{&quot;apiName&quot;:&quot;GiftCommitmentName&quot;,&quot;guid&quot;:&quot;column-0cae&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Gift Commitment Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;GiftCommitmentStatus&quot;,&quot;guid&quot;:&quot;column-7be7&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Gift Commitment Status&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;StartDate&quot;,&quot;guid&quot;:&quot;column-30ab&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Start Date&quot;,&quot;type&quot;:&quot;date-local&quot;},{&quot;apiName&quot;:&quot;EndDate&quot;,&quot;guid&quot;:&quot;column-64e1&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;End Date&quot;,&quot;type&quot;:&quot;date-local&quot;},{&quot;apiName&quot;:&quot;TransactionPeriod&quot;,&quot;guid&quot;:&quot;column-7599&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;Transaction Period&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;TransactionAmount&quot;,&quot;guid&quot;:&quot;column-fb7f&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:5,&quot;label&quot;:&quot;Transaction Amount&quot;,&quot;type&quot;:&quot;currency&quot;},{&quot;apiName&quot;:&quot;CampaignName&quot;,&quot;guid&quot;:&quot;column-b3dc&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:6,&quot;label&quot;:&quot;Campaign Name&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
         <description>Displays an error message to the flow user when there&apos;s an error retrieving the gift commitment schedule.</description>
         <name>DisplayErrorScheduleNotFoundScreen</name>
         <label>Display Error</label>
@@ -787,7 +891,7 @@
         <name>ScreenDisplayErrorFlow</name>
         <label>Display Flow Error</label>
         <locationX>1370</locationX>
-        <locationY>974</locationY>
+        <locationY>1082</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -831,6 +935,110 @@
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>Allows the flow user to select a recurring gift commitment schedule with Active, Paused, or Draft status.</description>
+        <name>SelectGiftCommitmentScheduleScreen</name>
+        <label>Select Gift Commitment Schedule</label>
+        <locationX>842</locationX>
+        <locationY>566</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>UpdatePaymentMethodScreen</targetReference>
+        </connector>
+        <fields>
+            <name>UpdatePaymentMethodDatatableScreenHeader</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;Change a Schedule&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>AvailableSchedulesForUpdatePaymentMethodSection</name>
+            <fieldText>Available Gift Commitment Schedules</fieldText>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>AvailableSchedulesForUpdatePaymentMethodSection_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>UpdatePaymentMethodScheduleInformation</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Ongoing and future Gift Commitment Schedules for recurring Gift Commitments with an active, draft, or paused status are shown.&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>UpdatePaymentMethodSelectSchdDataTable</name>
+            <dataTypeMappings>
+                <typeName>T</typeName>
+                <typeValue>GiftCommitmentSchedule</typeValue>
+            </dataTypeMappings>
+            <extensionName>flowruntime:datatable</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Select Schedule</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>selectionMode</name>
+                <value>
+                    <stringValue>SINGLE_SELECT</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>minRowSelection</name>
+                <value>
+                    <numberValue>1.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>tableData</name>
+                <value>
+                    <elementReference>GetGiftCommitmentSchedules</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>maxRowSelection</name>
+                <value>
+                    <numberValue>1.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>columns</name>
+                <value>
+                    <stringValue>[{&quot;apiName&quot;:&quot;GiftCommitmentName&quot;,&quot;guid&quot;:&quot;column-2258&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentName&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Gift Commitment Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;GiftCommitmentStatus&quot;,&quot;guid&quot;:&quot;column-a050&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentStatus&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Gift Commitment Status&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;StartDate&quot;,&quot;guid&quot;:&quot;column-9dd2&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentStartDate&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Start Date&quot;,&quot;type&quot;:&quot;date&quot;},{&quot;apiName&quot;:&quot;EndDate&quot;,&quot;guid&quot;:&quot;column-e3ed&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentEndDate&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;End Date&quot;,&quot;type&quot;:&quot;date&quot;},{&quot;apiName&quot;:&quot;TransactionPeriod&quot;,&quot;guid&quot;:&quot;column-ed07&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentTransactionPeriod&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;Transaction Period&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;TransactionAmount&quot;,&quot;guid&quot;:&quot;column-0fd4&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentTransactionAmount&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:5,&quot;label&quot;:&quot;Transaction Amount&quot;,&quot;type&quot;:&quot;currency&quot;},{&quot;apiName&quot;:&quot;CampaignName&quot;,&quot;guid&quot;:&quot;column-dd2a&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentCampaign&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:6,&quot;label&quot;:&quot;Campaign Name&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>shouldDisplayLabel</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>selectedRows</name>
+                <value>
+                    <elementReference>GetGiftCommitmentSchedules</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
     </screens>
     <screens>
         <description>Allows the flow user to select a recurring gift commitment schedule that has either an Active, Paused, or Draft status, and then update the schedule start and end dates.</description>
@@ -1111,11 +1319,11 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
-        <description>Allows the flow user to select a recurring gift commitment schedule  that has either Active, Paused, or Draft status, and then update the schedule’s payment method and date from when the updated payment method is effective.</description>
+        <description>Allows the flow user to update a schedule’s payment method and its effective date.</description>
         <name>UpdatePaymentMethodScreen</name>
         <label>Update Payment Method</label>
         <locationX>842</locationX>
-        <locationY>566</locationY>
+        <locationY>674</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1123,97 +1331,9 @@
             <targetReference>CreateUpdatePaymentMethodRequest</targetReference>
         </connector>
         <fields>
-            <name>UpdatePaymentMethodScreenHeader</name>
+            <name>UpdatePaymentMethodHeaderDisplayText</name>
             <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-size: 16px;&quot;&gt;Update Payment Method&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>AvailableSchedulesForUpdatePaymentMethodSection</name>
-            <fieldText>Available Gift Commitment Schedules</fieldText>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>AvailableSchedulesForUpdatePaymentMethodSection_Column1</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>UpdatePaymentMethodScheduleInformation</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Ongoing and future Gift Commitment Schedules for recurring Gift Commitments with an active, draft, or paused status are shown.&lt;/span&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <fields>
-                    <name>UpdatePaymentMethodMultiCurrencyInfoDisplayText</name>
-                    <fieldText>&lt;p&gt;&lt;em&gt;All the amount fields use the currency of the Gift Commitment.&lt;/em&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <fields>
-                    <name>UpdatePaymentMethodSelectSchdDataTable</name>
-                    <dataTypeMappings>
-                        <typeName>T</typeName>
-                        <typeValue>GiftCommitmentSchedule</typeValue>
-                    </dataTypeMappings>
-                    <extensionName>flowruntime:datatable</extensionName>
-                    <fieldType>ComponentInstance</fieldType>
-                    <inputParameters>
-                        <name>label</name>
-                        <value>
-                            <stringValue>Select Schedule</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>selectionMode</name>
-                        <value>
-                            <stringValue>SINGLE_SELECT</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>minRowSelection</name>
-                        <value>
-                            <numberValue>1.0</numberValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>tableData</name>
-                        <value>
-                            <elementReference>GetGiftCommitmentSchedules</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>maxRowSelection</name>
-                        <value>
-                            <numberValue>1.0</numberValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>columns</name>
-                        <value>
-                            <stringValue>[{&quot;apiName&quot;:&quot;GiftCommitmentName&quot;,&quot;guid&quot;:&quot;column-2258&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentName&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Gift Commitment Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;GiftCommitmentStatus&quot;,&quot;guid&quot;:&quot;column-a050&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentStatus&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Gift Commitment Status&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;StartDate&quot;,&quot;guid&quot;:&quot;column-9dd2&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentStartDate&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Start Date&quot;,&quot;type&quot;:&quot;date&quot;},{&quot;apiName&quot;:&quot;EndDate&quot;,&quot;guid&quot;:&quot;column-e3ed&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentEndDate&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;End Date&quot;,&quot;type&quot;:&quot;date&quot;},{&quot;apiName&quot;:&quot;TransactionPeriod&quot;,&quot;guid&quot;:&quot;column-ed07&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentTransactionPeriod&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;Transaction Period&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;TransactionAmount&quot;,&quot;guid&quot;:&quot;column-0fd4&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentTransactionAmount&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:5,&quot;label&quot;:&quot;Transaction Amount&quot;,&quot;type&quot;:&quot;currency&quot;},{&quot;apiName&quot;:&quot;CampaignName&quot;,&quot;guid&quot;:&quot;column-dd2a&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentCampaign&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:6,&quot;label&quot;:&quot;Campaign Name&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>shouldDisplayLabel</name>
-                        <value>
-                            <booleanValue>true</booleanValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>selectedRows</name>
-                        <value>
-                            <elementReference>GetGiftCommitmentSchedules</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <storeOutputAutomatically>true</storeOutputAutomatically>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>12</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithHeader</regionContainerType>
         </fields>
         <fields>
             <name>UpdatePaymentMethodScheduleInformationSection</name>
@@ -1524,11 +1644,11 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
-        <description>Allows the flow user to select a recurring gift commitment schedule  that has either Active, Paused, or Draft status, and then update the schedule’s transaction details like amount, period, interval, payment method and date from when the updates are effective.</description>
+        <description>Allows the flow user to update a schedule’s transaction details when upgrading or downgrading a gift commitment. The user can update the transaction details such as amount, period, interval, payment method and date from when the updates are effective.</description>
         <name>UpgradeDowngradeScreen</name>
-        <label>Upgrade Downgrade</label>
+        <label>Update Scheduled Transaction Details</label>
         <locationX>1106</locationX>
-        <locationY>566</locationY>
+        <locationY>674</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1536,97 +1656,9 @@
             <targetReference>CreateUpgradeDowngradeRequest</targetReference>
         </connector>
         <fields>
-            <name>UpgradeDowngradeScreenHeader</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;Upgrade | Downgrade&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <name>UpgradeDowngradeFormScreenHeader</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;Update Schedule Details&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>AvailableSchedulesForUpgradeDowngradeSection</name>
-            <fieldText>Available Gift Commitment Schedules</fieldText>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>AvailableSchedulesForUpgradeDowngradeSection_Column1</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>UpgradeDowngradeScheduleInformation</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Ongoing and future Gift Commitment Schedules for recurring Gift Commitments with an active, draft, or paused status are shown.&lt;/span&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <fields>
-                    <name>UpgradeDowngradeMultiCurrencyInfoDisplayText</name>
-                    <fieldText>&lt;p&gt;&lt;em&gt;All the amount fields use the currency of the Gift Commitment.&lt;/em&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <fields>
-                    <name>UpgradeDowngradeSelectSchdDataTable</name>
-                    <dataTypeMappings>
-                        <typeName>T</typeName>
-                        <typeValue>GiftCommitmentSchedule</typeValue>
-                    </dataTypeMappings>
-                    <extensionName>flowruntime:datatable</extensionName>
-                    <fieldType>ComponentInstance</fieldType>
-                    <inputParameters>
-                        <name>label</name>
-                        <value>
-                            <stringValue>Select Schedule</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>selectionMode</name>
-                        <value>
-                            <stringValue>SINGLE_SELECT</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>minRowSelection</name>
-                        <value>
-                            <numberValue>1.0</numberValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>tableData</name>
-                        <value>
-                            <elementReference>GetGiftCommitmentSchedules</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>maxRowSelection</name>
-                        <value>
-                            <numberValue>1.0</numberValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>columns</name>
-                        <value>
-                            <stringValue>[{&quot;apiName&quot;:&quot;GiftCommitmentName&quot;,&quot;guid&quot;:&quot;column-2258&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentName&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Gift Commitment Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;GiftCommitmentStatus&quot;,&quot;guid&quot;:&quot;column-a050&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentStatus&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Gift Commitment Status&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;StartDate&quot;,&quot;guid&quot;:&quot;column-9dd2&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentStartDate&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Start Date&quot;,&quot;type&quot;:&quot;date&quot;},{&quot;apiName&quot;:&quot;EndDate&quot;,&quot;guid&quot;:&quot;column-e3ed&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentEndDate&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;End Date&quot;,&quot;type&quot;:&quot;date&quot;},{&quot;apiName&quot;:&quot;TransactionPeriod&quot;,&quot;guid&quot;:&quot;column-ed07&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentTransactionPeriod&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;Transaction Period&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;TransactionAmount&quot;,&quot;guid&quot;:&quot;column-0fd4&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentTransactionAmount&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:5,&quot;label&quot;:&quot;Transaction Amount&quot;,&quot;type&quot;:&quot;currency&quot;},{&quot;apiName&quot;:&quot;CampaignName&quot;,&quot;guid&quot;:&quot;column-dd2a&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentCampaign&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:6,&quot;label&quot;:&quot;Campaign Name&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>shouldDisplayLabel</name>
-                        <value>
-                            <booleanValue>true</booleanValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>selectedRows</name>
-                        <value>
-                            <elementReference>GetGiftCommitmentSchedules</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <storeOutputAutomatically>true</storeOutputAutomatically>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>12</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithHeader</regionContainerType>
         </fields>
         <fields>
             <name>UpgradeDowngradeSchduleInfoSection</name>
@@ -1645,7 +1677,7 @@
                     <fieldText>Transaction Period</fieldText>
                     <fieldType>DropdownBox</fieldType>
                     <helpText>&lt;p&gt;Select Monthly, Weekly, Daily, or Yearly as the Gift Transaction period for this recurring schedule.&lt;/p&gt;</helpText>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                 </fields>
                 <fields>
@@ -1656,7 +1688,7 @@
                     </defaultValue>
                     <fieldText>Transaction Amount</fieldText>
                     <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <scale>2</scale>
                     <validationRule>
@@ -1684,7 +1716,7 @@
                     <fieldText>Transaction Interval</fieldText>
                     <fieldType>InputField</fieldType>
                     <helpText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Enter the interval of running the Gift Commitment Schedule. The transaction period and interval define how the schedule is run. For example, if the transaction period is monthly and the transaction interval is 3, the schedule runs every three months.&lt;/span&gt;&lt;/p&gt;</helpText>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <scale>0</scale>
                 </fields>
@@ -1698,7 +1730,7 @@
                     <fieldText>Transaction Day</fieldText>
                     <fieldType>DropdownBox</fieldType>
                     <helpText>&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Enter the day of the month to create Gift Transaction in the future for a monthly transaction period. If you select the day as 29 or 30, the Gift Transaction is created on the last day for months that don&apos;t have that many days.&lt;/span&gt;&lt;/p&gt;</helpText>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
@@ -1886,7 +1918,7 @@
                     <fieldText>Effective Start Date</fieldText>
                     <fieldType>InputField</fieldType>
                     <helpText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Enter the date from when updates to the Gift Commitment Schedule are effective.&lt;/span&gt;&lt;/p&gt;</helpText>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <validationRule>
                         <errorMessage>Enter a date that&apos;s on or after the schedule’s start date and on or before the schedule’s end date.</errorMessage>
@@ -1927,7 +1959,7 @@
                             <elementReference>UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.OutreachSourceCodeId</elementReference>
                         </value>
                     </inputParameters>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
@@ -1937,7 +1969,7 @@
                     <dataType>String</dataType>
                     <fieldText>Update Reason</fieldText>
                     <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
@@ -1960,7 +1992,7 @@
                     <fieldText>Effective End Date</fieldText>
                     <fieldType>InputField</fieldType>
                     <helpText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Enter the date until when updates to the Gift Commitment Schedule are effective.&lt;/span&gt;&lt;/p&gt;</helpText>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <validationRule>
                         <errorMessage>Enter a date that&apos;s on or after the schedule’s effective start date and on or before the schedule’s end date.</errorMessage>
@@ -2001,7 +2033,7 @@
                             <elementReference>UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.CampaignId</elementReference>
                         </value>
                     </inputParameters>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
@@ -2028,7 +2060,7 @@
             <targetReference>GetGiftCommitments</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <subflows>
         <description>Gets active, draft, and paused gift commitment records with a donor ID that matches recordId and a schedule type of Recurring. Stores the results in the GiftCommitments from GetGiftCommitments record collection.</description>
         <name>GetGiftCommitments</name>
