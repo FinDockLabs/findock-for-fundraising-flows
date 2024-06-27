@@ -70,7 +70,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
         <versionSegment>1</versionSegment>
     </actionCalls>
-    <apiVersion>60.0</apiVersion>
+    <apiVersion>61.0</apiVersion>
     <assignments>
         <description>Adds the ID of the current gift commitment record to the GiftCommitmentId variable.</description>
         <name>AddGiftCommitmentId</name>
@@ -1084,6 +1084,12 @@
                             <elementReference>CustomGiftCommitmentScheduleFields</elementReference>
                         </value>
                     </inputParameters>
+                    <inputParameters>
+                        <name>campaignID</name>
+                        <value>
+                            <elementReference>GetGiftCmtFromGiftCommitmentId.Campaign.Id</elementReference>
+                        </value>
+                    </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -1659,7 +1665,7 @@
     <subflows>
         <description>Updates the gift commitment schedule records that aren’t paused.</description>
         <name>Update_Recurring_Gift_Commitment_Schedule_FinDock</name>
-        <label>Update Recurring Gift Commitment Schedule</label>
+        <label>Update Recurring Gift Commitment Schedules</label>
         <locationX>1674</locationX>
         <locationY>890</locationY>
         <flowName>Update_Recurring_Gift_Commitment_Schedule_FinDock</flowName>
