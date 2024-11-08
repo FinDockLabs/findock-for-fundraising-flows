@@ -1084,12 +1084,6 @@
                             <elementReference>CustomGiftCommitmentScheduleFields</elementReference>
                         </value>
                     </inputParameters>
-                    <inputParameters>
-                        <name>campaignID</name>
-                        <value>
-                            <elementReference>GetGiftCmtFromGiftCommitmentId.Campaign.Id</elementReference>
-                        </value>
-                    </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>

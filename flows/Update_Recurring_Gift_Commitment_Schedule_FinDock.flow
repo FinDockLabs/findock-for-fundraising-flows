@@ -31,10 +31,11 @@
             </value>
         </inputParameters>
         <nameSegment>manageRcrGiftCmtSchd</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
         <versionSegment>1</versionSegment>
     </actionCalls>
-    <apiVersion>61.0</apiVersion>
+    <apiVersion>62.0</apiVersion>
     <assignments>
         <description>Sets the parameters on UpdateGiftCommitmentSchedule such as StartDate and EndDate from the values of UpdateDatesScreen.</description>
         <name>CreateUpdateDatesRequest</name>
@@ -745,7 +746,7 @@
             <inputParameters>
                 <name>label</name>
                 <value>
-                    <stringValue>$Label.UpdateRecurringScheduleFlow.scheduleSelectionDatatableHeader</stringValue>
+                    <stringValue>Select Schedule</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -1003,6 +1004,12 @@
                 </value>
             </inputParameters>
             <inputParameters>
+                <name>shouldDisplayLabel</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
                 <name>tableData</name>
                 <value>
                     <elementReference>GetGiftCommitmentSchedules</elementReference>
@@ -1015,21 +1022,15 @@
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>columns</name>
-                <value>
-                    <stringValue>[{&quot;apiName&quot;:&quot;GiftCommitmentName&quot;,&quot;guid&quot;:&quot;column-2258&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentName&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Gift Commitment Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;GiftCommitmentStatus&quot;,&quot;guid&quot;:&quot;column-a050&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentStatus&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Gift Commitment Status&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;StartDate&quot;,&quot;guid&quot;:&quot;column-9dd2&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentStartDate&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Start Date&quot;,&quot;type&quot;:&quot;date&quot;},{&quot;apiName&quot;:&quot;EndDate&quot;,&quot;guid&quot;:&quot;column-e3ed&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentEndDate&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;End Date&quot;,&quot;type&quot;:&quot;date&quot;},{&quot;apiName&quot;:&quot;TransactionPeriod&quot;,&quot;guid&quot;:&quot;column-ed07&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentTransactionPeriod&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;Transaction Period&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;TransactionAmount&quot;,&quot;guid&quot;:&quot;column-0fd4&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentTransactionAmount&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:5,&quot;label&quot;:&quot;Transaction Amount&quot;,&quot;type&quot;:&quot;currency&quot;},{&quot;apiName&quot;:&quot;CampaignName&quot;,&quot;guid&quot;:&quot;column-dd2a&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentCampaign&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:6,&quot;label&quot;:&quot;Campaign Name&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>shouldDisplayLabel</name>
-                <value>
-                    <booleanValue>true</booleanValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
                 <name>selectedRows</name>
                 <value>
                     <elementReference>GetGiftCommitmentSchedules</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>columns</name>
+                <value>
+                    <stringValue>[{&quot;apiName&quot;:&quot;GiftCommitmentName&quot;,&quot;guid&quot;:&quot;column-7d0a&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Gift Commitment Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;GiftCommitmentStatus&quot;,&quot;guid&quot;:&quot;column-3ab6&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Gift Commitment Status&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;StartDate&quot;,&quot;guid&quot;:&quot;column-e7c3&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Start Date&quot;,&quot;type&quot;:&quot;date-local&quot;},{&quot;apiName&quot;:&quot;EndDate&quot;,&quot;guid&quot;:&quot;column-af3b&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;End Date&quot;,&quot;type&quot;:&quot;date-local&quot;},{&quot;apiName&quot;:&quot;TransactionPeriod&quot;,&quot;guid&quot;:&quot;column-8d88&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;Transaction Period&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;TransactionAmount&quot;,&quot;guid&quot;:&quot;column-0152&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:5,&quot;label&quot;:&quot;Transaction Amount&quot;,&quot;type&quot;:&quot;currency&quot;},{&quot;apiName&quot;:&quot;CampaignName&quot;,&quot;guid&quot;:&quot;column-e053&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:6,&quot;label&quot;:&quot;Campaign Name&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1074,66 +1075,6 @@
                     <fieldText>&lt;p&gt;&lt;em&gt;All the amount fields use the currency of the Gift Commitment.&lt;/em&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
-                <fields>
-                    <name>UpdateDatesSelectSchdDataTable</name>
-                    <dataTypeMappings>
-                        <typeName>T</typeName>
-                        <typeValue>GiftCommitmentSchedule</typeValue>
-                    </dataTypeMappings>
-                    <extensionName>flowruntime:datatable</extensionName>
-                    <fieldType>ComponentInstance</fieldType>
-                    <inputParameters>
-                        <name>label</name>
-                        <value>
-                            <stringValue>Select Schedule</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>selectionMode</name>
-                        <value>
-                            <stringValue>SINGLE_SELECT</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>minRowSelection</name>
-                        <value>
-                            <numberValue>1.0</numberValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>tableData</name>
-                        <value>
-                            <elementReference>GetGiftCommitmentSchedules</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>maxRowSelection</name>
-                        <value>
-                            <numberValue>1.0</numberValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>columns</name>
-                        <value>
-                            <stringValue>[{&quot;apiName&quot;:&quot;GiftCommitmentName&quot;,&quot;guid&quot;:&quot;column-2258&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentName&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Gift Commitment Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;GiftCommitmentStatus&quot;,&quot;guid&quot;:&quot;column-a050&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentStatus&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Gift Commitment Status&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;StartDate&quot;,&quot;guid&quot;:&quot;column-9dd2&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentStartDate&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Start Date&quot;,&quot;type&quot;:&quot;date&quot;},{&quot;apiName&quot;:&quot;EndDate&quot;,&quot;guid&quot;:&quot;column-e3ed&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentEndDate&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;End Date&quot;,&quot;type&quot;:&quot;date&quot;},{&quot;apiName&quot;:&quot;TransactionPeriod&quot;,&quot;guid&quot;:&quot;column-ed07&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentTransactionPeriod&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;Transaction Period&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;TransactionAmount&quot;,&quot;guid&quot;:&quot;column-0fd4&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentTransactionAmount&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:5,&quot;label&quot;:&quot;Transaction Amount&quot;,&quot;type&quot;:&quot;currency&quot;},{&quot;apiName&quot;:&quot;CampaignName&quot;,&quot;guid&quot;:&quot;column-dd2a&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;$Label.UpdateRecurringScheduleFlow.commitmentCampaign&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:6,&quot;label&quot;:&quot;Campaign Name&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>shouldDisplayLabel</name>
-                        <value>
-                            <booleanValue>true</booleanValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>selectedRows</name>
-                        <value>
-                            <elementReference>GetGiftCommitmentSchedules</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <storeOutputAutomatically>true</storeOutputAutomatically>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -1144,6 +1085,66 @@
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>UpdateDatesSelectSchdDataTable</name>
+            <dataTypeMappings>
+                <typeName>T</typeName>
+                <typeValue>GiftCommitmentSchedule</typeValue>
+            </dataTypeMappings>
+            <extensionName>flowruntime:datatable</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Select Schedule</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>selectionMode</name>
+                <value>
+                    <stringValue>SINGLE_SELECT</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>minRowSelection</name>
+                <value>
+                    <numberValue>1.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>shouldDisplayLabel</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>tableData</name>
+                <value>
+                    <elementReference>GetGiftCommitmentSchedules</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>maxRowSelection</name>
+                <value>
+                    <numberValue>1.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>selectedRows</name>
+                <value>
+                    <elementReference>GetGiftCommitmentSchedules</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>columns</name>
+                <value>
+                    <stringValue>[{&quot;apiName&quot;:&quot;GiftCommitmentName&quot;,&quot;guid&quot;:&quot;column-85ef&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Gift Commitment Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;GiftCommitmentStatus&quot;,&quot;guid&quot;:&quot;column-17af&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Gift Commitment Status&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;StartDate&quot;,&quot;guid&quot;:&quot;column-40a6&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Start Date&quot;,&quot;type&quot;:&quot;date-local&quot;},{&quot;apiName&quot;:&quot;EndDate&quot;,&quot;guid&quot;:&quot;column-fb9e&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;End Date&quot;,&quot;type&quot;:&quot;date-local&quot;},{&quot;apiName&quot;:&quot;TransactionPeriod&quot;,&quot;guid&quot;:&quot;column-85ba&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:4,&quot;label&quot;:&quot;Transaction Period&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;TransactionAmount&quot;,&quot;guid&quot;:&quot;column-3be8&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:5,&quot;label&quot;:&quot;Transaction Amount&quot;,&quot;type&quot;:&quot;currency&quot;},{&quot;apiName&quot;:&quot;CampaignName&quot;,&quot;guid&quot;:&quot;column-a181&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:6,&quot;label&quot;:&quot;Campaign Name&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
         <fields>
             <name>UpdateDatesScheduleInfoSection</name>
@@ -1238,7 +1239,7 @@
                     <inputParameters>
                         <name>recordId</name>
                         <value>
-                            <elementReference>UpdateDatesSelectSchdDataTable.firstSelectedRow.OutreachSourceCode.Id</elementReference>
+                            <elementReference>UpdateDatesSelectSchdDataTable.firstSelectedRow.OutreachSourceCodeId</elementReference>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1296,7 +1297,7 @@
                     <inputParameters>
                         <name>recordId</name>
                         <value>
-                            <elementReference>UpdateDatesSelectSchdDataTable.firstSelectedRow.CampaignId</elementReference>
+                            <elementReference>UpdateDatesSelectSchdDataTable.firstSelectedRow.OutreachSourceCodeId</elementReference>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1336,11 +1337,102 @@
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>UpdatePaymentMethodScheduleInformationSection</name>
-            <fieldText>Schedule Information</fieldText>
+            <name>UpdatePaymentMethodMultiCurrencyInfoDisplayText</name>
+            <fieldText>&lt;p&gt;&lt;em style=&quot;font-size: 11pt; font-family: Arial, sans-serif; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;All the amount fields use the currency of the Gift Commitment.&lt;/em&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>SelectedScheduleForUpdatePaymentMethodSection</name>
+            <fieldText>{!UpdatePaymentMethodSelectSchdDataTable.firstSelectedRow.GiftCommitmentName}</fieldText>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>UpdatePaymentMethodScheduleInformationSection_Column1</name>
+                <name>SelectedScheduleForUpdatePaymentMethodSection_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>UpdatePaymentMethodGiftCommitmentNameDisplayText</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68);&quot;&gt;Gift Commitment Name&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(24, 24, 24);&quot;&gt;{!UpdatePaymentMethodSelectSchdDataTable.firstSelectedRow.GiftCommitmentName}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>UpdatePaymentMethodTransactionPeriodDisplayText</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68);&quot;&gt;Transaction Period&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(24, 24, 24); font-size: 14px;&quot;&gt;{!UpdatePaymentMethodSelectSchdDataTable.firstSelectedRow.TransactionPeriod}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>SelectedScheduleForUpdatePaymentMethodSection_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>UpdatePaymentMethodGiftCommitmentStatus</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68);&quot;&gt;Gift Commitment Status&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(24, 24, 24);&quot;&gt;{!UpdatePaymentMethodSelectSchdDataTable.firstSelectedRow.GiftCommitmentStatus}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>UpdatePaymentMethodTransactionAmountDisplayText</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68);&quot;&gt;Transaction Amount&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(24, 24, 24);&quot;&gt;{!UpdatePaymentMethodSelectSchdDataTable.firstSelectedRow.TransactionAmount}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>SelectedScheduleForUpdatePaymentMethodSection_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>UpdatePaymentMethodEffectiveStartDateDisplayText</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68);&quot;&gt;Effective Start Date&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;{!UpdatePaymentMethodSelectSchdDataTable.firstSelectedRow.StartDate}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>UpdatePaymentMethodCampaignDisplayText</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68);&quot;&gt;Campaign&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(24, 24, 24);&quot;&gt;{!UpdatePaymentMethodSelectSchdDataTable.firstSelectedRow.CampaignName}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>SelectedScheduleForUpdatePaymentMethodSection_Column4</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>UpdatePaymentMethodEffectiveEndDateDisplayText</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68);&quot;&gt;Effective End Date&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(24, 24, 24); font-size: 14px;&quot;&gt;{!UpdatePaymentMethodSelectSchdDataTable.firstSelectedRow.EndDate}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>UpdatePaymentMethodPaymentInformationSection</name>
+            <fieldText>Payment Information</fieldText>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>UpdatePaymentMethodPaymentInformationSection_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>FinDockDependentPaymentMethod</name>
@@ -1371,21 +1463,9 @@
                         </value>
                     </inputParameters>
                     <inputParameters>
-                        <name>topValue</name>
-                        <value>
-                            <elementReference>UpdatePaymentMethodSelectSchdDataTable.firstSelectedRow.fdff__Payment_Method__c</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
                         <name>middleLabel</name>
                         <value>
                             <stringValue>Payment Processor</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>middleValue</name>
-                        <value>
-                            <elementReference>UpdatePaymentMethodSelectSchdDataTable.firstSelectedRow.fdff__Payment_Processor__c</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1398,6 +1478,18 @@
                         <name>bottomLabel</name>
                         <value>
                             <stringValue>Target</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>topValue</name>
+                        <value>
+                            <elementReference>UpdatePaymentMethodSelectSchdDataTable.firstSelectedRow.fdff__Payment_Method__c</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>middleValue</name>
+                        <value>
+                            <elementReference>UpdatePaymentMethodSelectSchdDataTable.firstSelectedRow.fdff__Payment_Processor__c</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1419,7 +1511,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>UpdatePaymentMethodScheduleInformationSection_Column2</name>
+                <name>UpdatePaymentMethodPaymentInformationSection_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>FinDockPaymentProfile</name>
@@ -1547,7 +1639,7 @@
                     <inputParameters>
                         <name>recordId</name>
                         <value>
-                            <elementReference>UpdatePaymentMethodSelectSchdDataTable.firstSelectedRow.OutreachSourceCode.Id</elementReference>
+                            <elementReference>UpdatePaymentMethodSelectSchdDataTable.firstSelectedRow.OutreachSourceCodeId</elementReference>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1659,6 +1751,97 @@
             <name>UpgradeDowngradeFormScreenHeader</name>
             <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;Update Schedule Details&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>ChangeGiftCommitmentScheduleMultiCurrencyInfoDisplayText</name>
+            <fieldText>&lt;p&gt;&lt;em&gt;All the amount fields use the currency of the Gift Commitment.&lt;/em&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>SelectedScheduleForUpgradeDowngradeSection</name>
+            <fieldText>{!UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.GiftCommitmentName}</fieldText>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>SelectedScheduleForUpgradeDowngradeSection_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>UpgradeDowngradeGiftCommitmentNameDisplayText</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68);&quot;&gt;Gift Commitment Name&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;{!UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.GiftCommitmentName}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>UpgradeDowngradeTransactionPeriodDisplayText</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68);&quot;&gt;Transaction Period&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(24, 24, 24);&quot;&gt;{!UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.TransactionPeriod}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>SelectedScheduleForUpgradeDowngradeSection_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>UpgradeDowngradeTransactionAmountDisplayText</name>
+                    <fieldText>&lt;p&gt;Gift Commitment Status&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(24, 24, 24);&quot;&gt;{!UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.GiftCommitmentStatus}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>UpgradeDowngradeCampaignDisplayText</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68);&quot;&gt;Transaction Amount&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(24, 24, 24);&quot;&gt;{!UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.TransactionAmount}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>SelectedScheduleForUpgradeDowngradeSection_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>UpgradeDowngradeEffectiveStartDateDisplayText</name>
+                    <fieldText>&lt;p&gt;Effective Start Date&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;{!UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.StartDate}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>UpgradeDowngradeStatusDisplayText</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68);&quot;&gt;Campaign&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(24, 24, 24);&quot;&gt;{!UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.CampaignName}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>SelectedScheduleForUpgradeDowngradeSection_Column4</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>GiftCommitmentEffectiveEndDateDisplayText</name>
+                    <fieldText>&lt;p&gt;Effective End Date&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; color: rgb(24, 24, 24);&quot;&gt;{!UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.EndDate}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithHeader</regionContainerType>
         </fields>
         <fields>
             <name>UpgradeDowngradeSchduleInfoSection</name>
@@ -1780,21 +1963,9 @@
                         </value>
                     </inputParameters>
                     <inputParameters>
-                        <name>topValue</name>
-                        <value>
-                            <elementReference>UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.fdff__Payment_Method__c</elementReference>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
                         <name>middleLabel</name>
                         <value>
                             <stringValue>Payment Processor</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>middleValue</name>
-                        <value>
-                            <elementReference>UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.fdff__Payment_Processor__c</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1807,6 +1978,18 @@
                         <name>bottomLabel</name>
                         <value>
                             <stringValue>Target</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>topValue</name>
+                        <value>
+                            <elementReference>UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.fdff__Payment_Method__c</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>middleValue</name>
+                        <value>
+                            <elementReference>UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.fdff__Payment_Processor__c</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -1953,12 +2136,6 @@
                             <numberValue>1.0</numberValue>
                         </value>
                     </inputParameters>
-                    <inputParameters>
-                        <name>recordId</name>
-                        <value>
-                            <elementReference>UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.OutreachSourceCodeId</elementReference>
-                        </value>
-                    </inputParameters>
                     <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -2025,12 +2202,6 @@
                         <name>maxValues</name>
                         <value>
                             <numberValue>1.0</numberValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>recordId</name>
-                        <value>
-                            <elementReference>UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.CampaignId</elementReference>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
