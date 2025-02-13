@@ -19,8 +19,8 @@
             </value>
         </inputParameters>
         <nameSegment>manageRcrGiftCmtSchd</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
-        <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <description>Calls Process Gift Commitment Invocable action after deletion of custom gift commitment schedules and gift transactions.</description>
@@ -41,6 +41,7 @@
             </value>
         </inputParameters>
         <nameSegment>processGiftCommitment</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
         <versionSegment>1</versionSegment>
     </actionCalls>
@@ -67,10 +68,11 @@
             </value>
         </inputParameters>
         <nameSegment>manageCustomGiftCmtSchds</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
-        <versionSegment>1</versionSegment>
     </actionCalls>
-    <apiVersion>61.0</apiVersion>
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <description>Adds the ID of the current gift commitment record to the GiftCommitmentId variable.</description>
         <name>AddGiftCommitmentId</name>
@@ -361,6 +363,12 @@
             <stringValue>UpgradeDowngrade</stringValue>
         </value>
     </constants>
+    <customProperties>
+        <name>ScreenProgressIndicator</name>
+        <value>
+            <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
+        </value>
+    </customProperties>
     <decisions>
         <description>Determines whether the user wants to create or update a custom gift commitment schedule.</description>
         <name>CreateOrUpdateCustomGiftCommitmentSchedule</name>
@@ -989,7 +997,7 @@
         </connector>
         <fields>
             <name>CreateCustomGiftCommitmentScheduleScreenHeader</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;Create Custom Gift Commitment Schedules&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 24px;&quot;&gt;Create Custom Gift Commitment Schedules&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -1054,7 +1062,7 @@
         </fields>
         <fields>
             <name>CustomMultiCurrencyInfoDisplayText</name>
-            <fieldText>&lt;p&gt;&lt;em&gt;The currency of the transaction amount matches the currency in the associated Gift Commitment record.&lt;/em&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;em&gt;The currency of the transaction amount matches the currency in the associated gift commitment record.&lt;/em&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -1117,7 +1125,7 @@
         </connector>
         <fields>
             <name>CreateRecurringGiftCommitmentScheduleScreenHeader</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 16px;&quot;&gt;Create Recurring Gift Commitment Schedule&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 24px;&quot;&gt;Create Recurring Gift Commitment Schedule&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -1127,7 +1135,7 @@
         </fields>
         <fields>
             <name>RecurringMultiCurrencyInfoDisplayText</name>
-            <fieldText>&lt;p&gt;&lt;em&gt;The currency of the transaction amount matches the currency in the associated Gift Commitment record.&lt;/em&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;em&gt;The currency of the transaction amount matches the currency in the associated gift commitment record.&lt;/em&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
