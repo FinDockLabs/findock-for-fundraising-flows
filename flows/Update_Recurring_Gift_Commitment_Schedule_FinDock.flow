@@ -4,8 +4,8 @@
         <description>Calls an action to create or update a recurring type of gift commitment schedule record and create the first upcoming gift commitment transaction record.</description>
         <name>UpdateRecurringGiftCommitmentSchedule</name>
         <label>Update Recurring Gift Commitment Schedule</label>
-        <locationX>710</locationX>
-        <locationY>974</locationY>
+        <locationX>842</locationX>
+        <locationY>1082</locationY>
         <actionName>manageRcrGiftCmtSchd</actionName>
         <actionType>manageRcrGiftCmtSchd</actionType>
         <faultConnector>
@@ -33,9 +33,9 @@
         <nameSegment>manageRcrGiftCmtSchd</nameSegment>
         <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
-        <versionSegment>1</versionSegment>
     </actionCalls>
-    <apiVersion>62.0</apiVersion>
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <description>Sets the parameters on UpdateGiftCommitmentSchedule such as StartDate and EndDate from the values of UpdateDatesScreen.</description>
         <name>CreateUpdateDatesRequest</name>
@@ -100,7 +100,7 @@
         <name>CreateUpdatePaymentMethodRequest</name>
         <label>Create Update Payment Method Request</label>
         <locationX>842</locationX>
-        <locationY>782</locationY>
+        <locationY>890</locationY>
         <assignmentItems>
             <assignToReference>UpdateGiftCommitmentSchedule.CampaignId</assignToReference>
             <operator>Assign</operator>
@@ -193,8 +193,8 @@
         <description>Sets the parameters on UpdateGiftCommitmentSchedule from the values of UpgradeDowngradeScreen.</description>
         <name>CreateUpgradeDowngradeRequest</name>
         <label>Create Upgrade Downgrade Request</label>
-        <locationX>1106</locationX>
-        <locationY>782</locationY>
+        <locationX>1370</locationX>
+        <locationY>890</locationY>
         <assignmentItems>
             <assignToReference>UpdateGiftCommitmentSchedule.TransactionPeriod</assignToReference>
             <operator>Assign</operator>
@@ -315,7 +315,7 @@
         <description>Sets the selected action on SelectActionScreen to action.</description>
         <name>SetAction</name>
         <label>Set Action</label>
-        <locationX>1898</locationX>
+        <locationX>2426</locationX>
         <locationY>458</locationY>
         <assignmentItems>
             <assignToReference>action</assignToReference>
@@ -422,11 +422,17 @@
             <stringValue>UpgradeDowngrade</stringValue>
         </value>
     </constants>
+    <customProperties>
+        <name>ScreenProgressIndicator</name>
+        <value>
+            <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
+        </value>
+    </customProperties>
     <decisions>
         <description>Determines the state of the gift commitments retrieved in GetGiftCommitments.</description>
         <name>IsGiftCmtValidWithAnAction</name>
         <label>What is Gift Commitment State?</label>
-        <locationX>974</locationX>
+        <locationX>1238</locationX>
         <locationY>242</locationY>
         <defaultConnector>
             <targetReference>SelectActionScreen</targetReference>
@@ -481,7 +487,7 @@
         <description>Determines whether to update the schedule dates, payment method, or perform upgrade or downgrade on the recurring gift commitment schedule that’s retrieved in GetGiftCommitmentSchedules.</description>
         <name>WhichActionOnRecurringSchedule</name>
         <label>Which Action on Recurring Schedule?</label>
-        <locationX>710</locationX>
+        <locationX>842</locationX>
         <locationY>458</locationY>
         <defaultConnector>
             <targetReference>ChangeGiftCommitmentScheduleScreen</targetReference>
@@ -650,7 +656,7 @@
         <description>Gets ongoing and future gift commitment schedule records for giftCommitmentId that has type as CreateTransactions.</description>
         <name>GetGiftCommitmentSchedules</name>
         <label>Get Gift Commitment Schedules</label>
-        <locationX>710</locationX>
+        <locationX>842</locationX>
         <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -699,7 +705,7 @@
         <description>Allows the flow user to change the schedule when upgrading or downgrading a gift commitment. The user can select a recurring gift commitment schedule that has Active, Paused, or Draft status.</description>
         <name>ChangeGiftCommitmentScheduleScreen</name>
         <label>Change Gift Commitment Schedule</label>
-        <locationX>1106</locationX>
+        <locationX>1370</locationX>
         <locationY>566</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -709,7 +715,7 @@
         </connector>
         <fields>
             <name>ChangeGiftCommitmentScheduleHeaderDisplayText</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-size: 16px;&quot;&gt;Change a Schedule&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 24px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;Change a Schedule&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -891,8 +897,8 @@
         <description>Displays a message to the user indicating that an error occurred in the flow.</description>
         <name>ScreenDisplayErrorFlow</name>
         <label>Display Flow Error</label>
-        <locationX>1370</locationX>
-        <locationY>1082</locationY>
+        <locationX>1898</locationX>
+        <locationY>1190</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -909,7 +915,7 @@
         <description>Allows the flow user to select an action to be performed on the recurring gift commitment schedule.</description>
         <name>SelectActionScreen</name>
         <label>Select Action</label>
-        <locationX>1898</locationX>
+        <locationX>2426</locationX>
         <locationY>350</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -951,7 +957,7 @@
         </connector>
         <fields>
             <name>UpdatePaymentMethodDatatableScreenHeader</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;Change a Schedule&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-size: 24px;&quot;&gt;Change a Schedule&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -1055,7 +1061,7 @@
         </connector>
         <fields>
             <name>UpdateScheduleDates</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;Update Dates&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-size: 24px;&quot;&gt;Update Dates&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -1324,7 +1330,7 @@
         <name>UpdatePaymentMethodScreen</name>
         <label>Update Payment Method</label>
         <locationX>842</locationX>
-        <locationY>674</locationY>
+        <locationY>782</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1333,7 +1339,7 @@
         </connector>
         <fields>
             <name>UpdatePaymentMethodHeaderDisplayText</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-size: 16px;&quot;&gt;Update Payment Method&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 24px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;Update Payment Method&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -1739,8 +1745,8 @@
         <description>Allows the flow user to update a schedule’s transaction details when upgrading or downgrading a gift commitment. The user can update the transaction details such as amount, period, interval, payment method and date from when the updates are effective.</description>
         <name>UpgradeDowngradeScreen</name>
         <label>Update Scheduled Transaction Details</label>
-        <locationX>1106</locationX>
-        <locationY>674</locationY>
+        <locationX>1370</locationX>
+        <locationY>782</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1749,7 +1755,7 @@
         </connector>
         <fields>
             <name>UpgradeDowngradeFormScreenHeader</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;Update Schedule Details&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 24px;&quot;&gt;Update Schedule Details&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -2225,7 +2231,7 @@
     </screens>
     <sourceTemplate>frops_flow__UpdateRecurringSchedule</sourceTemplate>
     <start>
-        <locationX>848</locationX>
+        <locationX>1112</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>GetGiftCommitments</targetReference>
@@ -2236,7 +2242,7 @@
         <description>Gets active, draft, and paused gift commitment records with a donor ID that matches recordId and a schedule type of Recurring. Stores the results in the GiftCommitments from GetGiftCommitments record collection.</description>
         <name>GetGiftCommitments</name>
         <label>Get Gift Commitments</label>
-        <locationX>974</locationX>
+        <locationX>1238</locationX>
         <locationY>134</locationY>
         <connector>
             <targetReference>IsGiftCmtValidWithAnAction</targetReference>
