@@ -3,6 +3,7 @@ import FlowModal from 'c/flowModal';
 import { getRecord } from 'lightning/uiRecordApi';
 import getCommitmentInformation from '@salesforce/apex/GiftCommitmentSetupController.getCommitmentInformation';
 import NAME_FIELD from '@salesforce/schema/GiftCommitment.Name';
+import {CloseActionScreenEvent} from 'lightning/actions'
 
 export default class GiftCommitmentSetup extends LightningElement {
     @api recordId;
