@@ -2,7 +2,6 @@
   "packageDirectories": [
     { "path": "sfdx-source", "default": true }
   ],
-  "namespace": "cpm",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "63.0"
 }
