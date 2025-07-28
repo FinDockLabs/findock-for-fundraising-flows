@@ -2,6 +2,8 @@
   "packageDirectories": [
     { "path": "sfdx-source", "default": true }
   ],
+  "name": "FindockFundraising",
+  "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "63.0"
 }
