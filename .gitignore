@@ -2,3 +2,12 @@
 .idea/
 .sfdx
 .sf
+.localdev/
+/out/
+target/
+node_modules/
+**/tsconfig*.json
+**/*.tsbuildinfo
+**/lwc/types
+/IlluminatedCloud/
+/.illuminatedCloud/
