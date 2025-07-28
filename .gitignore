@@ -2,14 +2,12 @@
 .idea/
 .sfdx
 .sf
-
-# Added by Illuminated Cloud
 .localdev/
-/IlluminatedCloud/
 /out/
 target/
 node_modules/
-/.illuminatedCloud/
 **/tsconfig*.json
 **/*.tsbuildinfo
 **/lwc/types
+/IlluminatedCloud/
+/.illuminatedCloud/
