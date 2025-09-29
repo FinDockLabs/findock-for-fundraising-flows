@@ -4,8 +4,8 @@
         <description>Creates a recurring type of gift commitment schedule record and stores it in the RecurringGiftCmtScheduleRequest variable.</description>
         <name>CreateRecurringGiftCommitmentScheduleRecord</name>
         <label>Create Recurring Gift Commitment Schedule Record</label>
-        <locationX>2202</locationX>
-        <locationY>1106</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <actionName>manageRcrGiftCmtSchd</actionName>
         <actionType>manageRcrGiftCmtSchd</actionType>
         <faultConnector>
@@ -26,8 +26,8 @@
         <description>Calls Process Gift Commitment Invocable action after deletion of custom gift commitment schedules and gift transactions.</description>
         <name>ProcessGiftCommitment</name>
         <label>Process Gift Commitment</label>
-        <locationX>3522</locationX>
-        <locationY>1430</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <actionName>processGiftCommitment</actionName>
         <actionType>processGiftCommitment</actionType>
         <faultConnector>
@@ -49,8 +49,8 @@
         <description>Creates or updates the custom type of gift commitment schedule record with the data specified by the user.</description>
         <name>UpsertCustomGiftCommitmentSchedule</name>
         <label>Upsert Custom Gift Commitment Schedule</label>
-        <locationX>2862</locationX>
-        <locationY>1214</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <actionName>manageCustomGiftCmtSchds</actionName>
         <actionType>manageCustomGiftCmtSchds</actionType>
         <connector>
@@ -71,14 +71,13 @@
         <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
-    <apiVersion>63.0</apiVersion>
-    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <apiVersion>64.0</apiVersion>
     <assignments>
         <description>Adds the ID of the current gift commitment record to the GiftCommitmentId variable.</description>
         <name>AddGiftCommitmentId</name>
         <label>Add Gift Commitment ID</label>
-        <locationX>490</locationX>
-        <locationY>674</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignmentItems>
             <assignToReference>GiftCommitmentId</assignToReference>
             <operator>Assign</operator>
@@ -94,8 +93,8 @@
         <description>Sets isError to True and errorCode to InvalidCommitmentErrorCode.</description>
         <name>SetErrorVariablesInvalidGiftCommitmentId</name>
         <label>Set Error Variables</label>
-        <locationX>1146</locationX>
-        <locationY>566</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignmentItems>
             <assignToReference>InvalidCommitmentErrorCode</assignToReference>
             <operator>Assign</operator>
@@ -104,7 +103,6 @@
             </value>
         </assignmentItems>
         <connector>
-            <isGoTo>true</isGoTo>
             <targetReference>DisplayManageScheduleError</targetReference>
         </connector>
     </assignments>
@@ -112,8 +110,8 @@
         <description>Sets isError to True and errorCode to InvalidRecordIdErrorCode.</description>
         <name>SetErrorVariablesInvalidRecordId</name>
         <label>Set Error Variables</label>
-        <locationX>5634</locationX>
-        <locationY>242</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignmentItems>
             <assignToReference>InvalidRecordIdErrorCode</assignToReference>
             <operator>Assign</operator>
@@ -130,8 +128,8 @@
         <description>Sets donorHasNoCommitmentError to True.</description>
         <name>SetErrorVariablesNoGiftCommitments</name>
         <label>Set Error Variable</label>
-        <locationX>50</locationX>
-        <locationY>566</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignmentItems>
             <assignToReference>donorHasNoCommitmentError</assignToReference>
             <operator>Assign</operator>
@@ -147,8 +145,8 @@
         <description>Sets SetErrorVariablesNoneScheduleType to True.</description>
         <name>SetErrorVariablesNoneScheduleType</name>
         <label>Set Error Variables</label>
-        <locationX>1410</locationX>
-        <locationY>566</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignmentItems>
             <assignToReference>NoneScheduleTypeErrorCode</assignToReference>
             <operator>Assign</operator>
@@ -165,8 +163,8 @@
         <description>SetsIsPausedGiftCommitmentSchedulesError</description>
         <name>SetErrorVariablesPausedGiftCommitmentSchedules</name>
         <label>Set Error Variables</label>
-        <locationX>1938</locationX>
-        <locationY>890</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignmentItems>
             <assignToReference>IsPausedGiftCommitmentSchedulesError</assignToReference>
             <operator>Assign</operator>
@@ -175,7 +173,6 @@
             </value>
         </assignmentItems>
         <connector>
-            <isGoTo>true</isGoTo>
             <targetReference>DisplayManageScheduleError</targetReference>
         </connector>
     </assignments>
@@ -183,8 +180,8 @@
         <description>Sets isError to True and errorCode to UnchangedCustomScheduleErrorCode.</description>
         <name>SetErrorVariablesUnchangedCustomGiftCmtSchdError</name>
         <label>Set Error Variables</label>
-        <locationX>4578</locationX>
-        <locationY>1214</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignmentItems>
             <assignToReference>UnchangedCustomScheduleErrorCode</assignToReference>
             <operator>Assign</operator>
@@ -201,8 +198,8 @@
         <description>Sets new fields for a custom gift commitment schedule in the CustomGiftCmtSchdFields variable based on the values provided by the user.</description>
         <name>SetFieldsforCustomGiftCommitmentSchedule</name>
         <label>Set Fields for Custom Gift Commitment Schedule</label>
-        <locationX>3720</locationX>
-        <locationY>890</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignmentItems>
             <assignToReference>CustomGiftCommitmentScheduleFields</assignToReference>
             <operator>Add</operator>
@@ -218,8 +215,8 @@
         <description>Sets CommitmentCount to the number of records in the GiftCommitments from GetGiftCommitments variable.</description>
         <name>SetGiftCommitmentCount</name>
         <label>Set Gift Commitment Count</label>
-        <locationX>334</locationX>
-        <locationY>350</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignmentItems>
             <assignToReference>GiftCommitmentCount</assignToReference>
             <operator>AssignCount</operator>
@@ -235,8 +232,8 @@
         <description>Sets giftCommitmentId to the ID stored in the recordId variable.</description>
         <name>SetGiftCommitmentId</name>
         <label>Set Gift Commitment ID</label>
-        <locationX>1921</locationX>
-        <locationY>242</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignmentItems>
             <assignToReference>GiftCommitmentId</assignToReference>
             <operator>Assign</operator>
@@ -252,8 +249,8 @@
         <description>Sets the gift commitment schedule values of the  RecurringGiftCmtScheduleRequest variable to the values specified in the CollectRecurringGiftComitSchdDetailsScreen element.</description>
         <name>SetRecurringGiftCommitmentScheduleValues</name>
         <label>Set Recurring Gift Commitment Schedule Values</label>
-        <locationX>2202</locationX>
-        <locationY>998</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignmentItems>
             <assignToReference>RecurringGiftCommitmentScheduleRequest.TransactionPeriod</assignToReference>
             <operator>Assign</operator>
@@ -325,8 +322,8 @@
         <description>Sets giftCommitmentId to the first gift commitment record in GetGiftCommitments.</description>
         <name>SetSelectedGiftCommitmentId</name>
         <label>Set Selected Gift Commitment ID</label>
-        <locationX>618</locationX>
-        <locationY>674</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignmentItems>
             <assignToReference>GiftCommitmentId</assignToReference>
             <operator>Assign</operator>
@@ -373,8 +370,8 @@
         <description>Determines whether the user wants to create or update a custom gift commitment schedule.</description>
         <name>CreateOrUpdateCustomGiftCommitmentSchedule</name>
         <label>Create or Update Custom Gift Commitment Schedule?</label>
-        <locationX>3720</locationX>
-        <locationY>1106</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <defaultConnector>
             <targetReference>SetErrorVariablesUnchangedCustomGiftCmtSchdError</targetReference>
         </defaultConnector>
@@ -421,8 +418,8 @@
         <description>Determines whether the user wants to delete any custom schedules.</description>
         <name>HasCustomSchedulesToDelete</name>
         <label>Has Custom Schedules to Delete?</label>
-        <locationX>2862</locationX>
-        <locationY>1322</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <defaultConnectorLabel>No (Default)</defaultConnectorLabel>
         <rules>
             <name>HasCustomSchedulesForDeletion</name>
@@ -445,8 +442,8 @@
         <description>Determines whether the gift commitment record is valid and has the schedule type as None.</description>
         <name>IsGiftCommitmentValid</name>
         <label>Is Gift Commitment Valid?</label>
-        <locationX>1921</locationX>
-        <locationY>458</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <defaultConnector>
             <targetReference>GetGiftCommitmentSchedules</targetReference>
         </defaultConnector>
@@ -493,8 +490,8 @@
         <description>Determines whether giftCommitmentCount or GiftCommitments from GetGiftCommitments is greater than 0.</description>
         <name>WhatCountOfGiftCommitments</name>
         <label>What’s the Count of Gift Commitments?</label>
-        <locationX>334</locationX>
-        <locationY>458</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <defaultConnector>
             <targetReference>SelectGiftCommitmentScreen</targetReference>
         </defaultConnector>
@@ -541,8 +538,8 @@
         <description>Determines whether there are any gift commitment schedules of type custom or recurring. Also, determines whether the recurring schedules are paused.</description>
         <name>WhatTypeOfGiftCommitmentSchedules</name>
         <label>What Type of Gift Commitment Schedules?</label>
-        <locationX>2697</locationX>
-        <locationY>782</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <defaultConnector>
             <targetReference>SetFieldsforCustomGiftCommitmentSchedule</targetReference>
         </defaultConnector>
@@ -618,8 +615,8 @@
         <description>Determines whether the record ID that&apos;s passed into the flow is a donor ID, gift commitment ID, or other ID.</description>
         <name>WhatTypeOfId</name>
         <label>What type of ID?</label>
-        <locationX>2984</locationX>
-        <locationY>134</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <defaultConnector>
             <targetReference>SetErrorVariablesInvalidRecordId</targetReference>
         </defaultConnector>
@@ -702,8 +699,8 @@
         <description>Repeats actions in a loop for each gift commitment record in the GiftCommitments from GetGiftCommitments variable.</description>
         <name>IterateOverGiftCommitments</name>
         <label>Iterate Over Gift Commitments</label>
-        <locationX>402</locationX>
-        <locationY>566</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <collectionReference>GetGiftCommitments</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -731,8 +728,8 @@
         <description>Deletes the custom gift commitment schedules after deleting the associated gift transactions for the schedules that are specified for deletion.</description>
         <name>DeleteCustomGiftCommitmentSchedules</name>
         <label>Delete Custom Gift Commitment Schedules</label>
-        <locationX>3522</locationX>
-        <locationY>1322</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>ProcessGiftCommitment</targetReference>
         </connector>
@@ -754,8 +751,8 @@
         <description>Deletes gift commitment transaction records for the custom schedules that are specified for deletion.</description>
         <name>DeleteGiftCommitmentTransactions</name>
         <label>Delete Gift Commitment Transactions</label>
-        <locationX>3522</locationX>
-        <locationY>1214</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>DeleteCustomGiftCommitmentSchedules</targetReference>
         </connector>
@@ -777,8 +774,8 @@
         <description>Gets the gift commitment record with an ID that matches the ID in the GiftCommitmentId variable.</description>
         <name>GetGiftCmtFromGiftCommitmentId</name>
         <label>Get Gift Commitment</label>
-        <locationX>1921</locationX>
-        <locationY>350</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>IsGiftCommitmentValid</targetReference>
@@ -826,8 +823,8 @@
         <description>Gets the active, draft, and paused gift commitment records with a donor ID that matches the recordId. Stores the results in the GiftCommitments from GetGiftCommitments record collection.</description>
         <name>GetGiftCommitments</name>
         <label>Get Gift Commitments</label>
-        <locationX>334</locationX>
-        <locationY>242</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>SetGiftCommitmentCount</targetReference>
@@ -880,8 +877,8 @@
         <description>Gets ongoing and future gift commitment schedule records with type CreateTransactions, and an ID that matches the GiftCommitmentId.</description>
         <name>GetGiftCommitmentSchedules</name>
         <label>Get Gift Commitment Schedules</label>
-        <locationX>2697</locationX>
-        <locationY>566</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>GetPausedGiftCommitmentSchedules</targetReference>
@@ -929,8 +926,8 @@
         <description>Gets gift commitment schedule records with the type PauseTransactions, and an ID that matches the GiftCommitmentId.</description>
         <name>GetPausedGiftCommitmentSchedules</name>
         <label>Get Paused Gift Commitment Schedules</label>
-        <locationX>2697</locationX>
-        <locationY>674</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>WhatTypeOfGiftCommitmentSchedules</targetReference>
@@ -976,8 +973,8 @@
         <description>Rolls back all the deleted gift transaction records when the deletion of the custom gift commitment schedule fails.</description>
         <name>RollBackFailedGiftTransactions</name>
         <label>Roll Back Failed Gift Transactions</label>
-        <locationX>3786</locationX>
-        <locationY>1538</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <connector>
             <isGoTo>true</isGoTo>
             <targetReference>DisplayFaultErrorManageScheduleScreen</targetReference>
@@ -987,8 +984,8 @@
         <description>Allows the flow user to create a custom gift commitment schedule when gift commitment schedules with custom schedule type were found for the gift commitment with GiftCommitmentId.</description>
         <name>CreateCustomGiftCommitmentSchedule</name>
         <label>Create Custom Gift Commitment Schedule</label>
-        <locationX>3720</locationX>
-        <locationY>998</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1115,8 +1112,8 @@
         <description>Allows the flow user to create a recurring gift commitment schedule when no active or paused gift commitment schedules were found for the gift commitment with the GiftCommitmentId.</description>
         <name>CreateRecurringGiftCommitmentScheduleScreen</name>
         <label>Create Recurring Gift Commitment Schedule</label>
-        <locationX>2202</locationX>
-        <locationY>890</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1440,8 +1437,8 @@
         <description>Displays a message to the flow user when the system can’t get a gift commitment or gift commitment schedule records, roll back gift transaction, or create gift commitment schedule record.</description>
         <name>DisplayFaultErrorManageScheduleScreen</name>
         <label>Display Error</label>
-        <locationX>2466</locationX>
-        <locationY>1214</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1458,8 +1455,8 @@
         <description>Displays a message to the flow user when there’s an error updating the gift commitment schedules.</description>
         <name>DisplayManageScheduleError</name>
         <label>Display Error</label>
-        <locationX>50</locationX>
-        <locationY>674</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1561,8 +1558,8 @@
         <description>Allows the flow user to select a gift commitment from the available list stored in the GiftCommitments from GetGiftCommitments record collection.</description>
         <name>SelectGiftCommitmentScreen</name>
         <label>Select Gift Commitment</label>
-        <locationX>618</locationX>
-        <locationY>566</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1657,7 +1654,7 @@
     </screens>
     <sourceTemplate>frops_flow__ManageGiftCmtSchedule</sourceTemplate>
     <start>
-        <locationX>2858</locationX>
+        <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>WhatTypeOfId</targetReference>
@@ -1668,8 +1665,8 @@
         <description>Updates the gift commitment schedule records that aren’t paused.</description>
         <name>Update_Recurring_Gift_Commitment_Schedule_FinDock</name>
         <label>Update Recurring Gift Commitment Schedules</label>
-        <locationX>1674</locationX>
-        <locationY>890</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <flowName>Update_Recurring_Gift_Commitment_Schedule_FinDock</flowName>
         <inputAssignments>
             <name>action</name>
