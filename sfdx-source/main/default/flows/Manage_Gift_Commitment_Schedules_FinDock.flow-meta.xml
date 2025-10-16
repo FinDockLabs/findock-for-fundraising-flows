@@ -71,7 +71,8 @@
         <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
-    <apiVersion>64.0</apiVersion>
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <description>Adds the ID of the current gift commitment record to the GiftCommitmentId variable.</description>
         <name>AddGiftCommitmentId</name>

@@ -22,7 +22,7 @@ The prerequisites to deploy this repository are:
 - Fundraising enabled and configured in your Salesforce environment
 - The FinDock for Fundraising package is installed
 
-The flows are updated to be compatible with Salesforce Summer '25.
+The flows are updated to be compatible with Salesforce Winter '26.
 
 ## Full list of components
 

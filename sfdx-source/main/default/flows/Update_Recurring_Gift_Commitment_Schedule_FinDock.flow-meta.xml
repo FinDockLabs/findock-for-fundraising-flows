@@ -34,7 +34,8 @@
         <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
-    <apiVersion>64.0</apiVersion>
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <description>Sets the parameters on UpdateGiftCommitmentSchedule such as StartDate and EndDate from the values of UpdateDatesScreen.</description>
         <name>CreateUpdateDatesRequest</name>
