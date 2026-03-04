@@ -71,7 +71,7 @@
         <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
-    <apiVersion>65.0</apiVersion>
+    <apiVersion>66.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <description>Adds the ID of the current gift commitment record to the GiftCommitmentId variable.</description>
@@ -1093,6 +1093,14 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1104,6 +1112,14 @@
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <nextOrFinishButtonLabel>Confirm And Save</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
@@ -1125,16 +1141,40 @@
             <name>CreateRecurringGiftCommitmentScheduleScreenHeader</name>
             <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 24px;&quot;&gt;Create Recurring Gift Commitment Schedule&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>CreateRecurringGiftCommitmentScheduleDisplayText</name>
             <fieldText>&lt;p&gt;&lt;em style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Create a recurring Gift Commitment Schedule.&lt;/em&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>RecurringMultiCurrencyInfoDisplayText</name>
             <fieldText>&lt;p&gt;&lt;em&gt;The currency of the transaction amount matches the currency in the associated gift commitment record.&lt;/em&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>GiftCommitmentInformationSection</name>
@@ -1147,6 +1187,14 @@
                     <name>GiftCommitmentNameText</name>
                     <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Gift Commitment Name&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;﻿&lt;/span&gt;&lt;strong style=&quot;font-size: 12px;&quot;&gt;{!GetGiftCmtFromGiftCommitmentId.Name}&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1163,6 +1211,14 @@
                     <name>ExpectedTotalGiftCmtAmountDisplayText</name>
                     <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Expected Total Gift Commitment Amount&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;{!GetGiftCmtFromGiftCommitmentId.ExpectedTotalCmtAmount}&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1179,6 +1235,14 @@
                     <name>ExpectedGiftCommitmentEndDateDisplayText</name>
                     <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Gift Commitment Expected End Date&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;{!GetGiftCmtFromGiftCommitmentId.ExpectedEndDate}&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1190,6 +1254,14 @@
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>SetRecurringGiftCommitmentScheduleInformation</name>
@@ -1208,6 +1280,14 @@
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>GiftTransactionPeriodPicklist</name>
@@ -1221,6 +1301,14 @@
                     <helpText>&lt;p&gt;Select the period for which the Gift Commitment Schedule is run. You must select from one of these transaction periods: Daily, Monthly, Weekly, Yearly.&lt;/p&gt;</helpText>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>GiftTransactionAmount</name>
@@ -1230,6 +1318,14 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <scale>2</scale>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <validationRule>
                         <errorMessage>Enter an amount that&apos;s greater than 0.</errorMessage>
                         <formulaExpression>{!ValidateGiftTransactionAmountFormula}</formulaExpression>
@@ -1272,6 +1368,14 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1291,6 +1395,14 @@
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                     <validationRule>
                         <errorMessage>Select an EndDate that’s on or after the StartDate.</errorMessage>
                         <formulaExpression>{!ValidateEndDateFormula}</formulaExpression>
@@ -1308,6 +1420,14 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <scale>0</scale>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>GiftTransactionDayPicklist</name>
@@ -1321,6 +1441,14 @@
                     <helpText>&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;Select a day to create a gift transaction for a monthly transaction period in the future. If you select 29 or 30, the gift transaction will be created on the last day of the month that doesn&apos;t have the selected number of days. This field is applicable only when you select Monthly in GiftTransactionPeriod.&lt;/span&gt;&lt;/p&gt;</helpText>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>CampaignLookup</name>
@@ -1359,6 +1487,14 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1370,6 +1506,14 @@
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>FinDock</name>
@@ -1383,12 +1527,28 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>RecurringGiftCommitmentScheduleRequest.fdff__Payment_Method__c</objectFieldReference>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>RecurringGiftCommitmentScheduleRequest.fdff__Payment_Processor__c</objectFieldReference>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
@@ -1412,12 +1572,28 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>RecurringGiftCommitmentScheduleRequest.fdff__Payment_Profile__c</objectFieldReference>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>RecurringGiftCommitmentScheduleRequest.fdff__Mandate__c</objectFieldReference>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1429,6 +1605,14 @@
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <nextOrFinishButtonLabel>Confirm And Save</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
@@ -1447,6 +1631,14 @@
             <name>ManageScheduleErrorDisplayText</name>
             <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(234, 0, 30);&quot;&gt;{!$Flow.FaultMessage}&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <nextOrFinishButtonLabel>Close</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
@@ -1465,6 +1657,14 @@
             <name>NoScheduleChangeErrorDisplayText</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em style=&quot;background-color: rgb(255, 255, 255); color: rgb(234, 0, 30);&quot;&gt;Looks like you didn’t add or edit any values in the custom schedule. Specify the values and try again.&lt;/em&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
@@ -1480,6 +1680,14 @@
             <name>InvalidRecordIdErrorDisplayText</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em style=&quot;color: rgb(234, 0, 30); background-color: rgb(255, 255, 255);&quot;&gt;The specified ID is neither a donor ID nor a Gift Commitment ID. Specify a valid ID and try again.&lt;/em&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
@@ -1495,6 +1703,14 @@
             <name>InvalidCommitmentStatusErrorDisplayText</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em style=&quot;color: rgb(234, 0, 30); background-color: rgb(255, 255, 255);&quot;&gt;You can’t edit the schedule because the status of the associated Gift Commitment is Lapsed, Failing, or Closed.&lt;/em&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
@@ -1510,6 +1726,14 @@
             <name>InvalidGiftCommitmentForDonorErrorDisplayText</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em style=&quot;background-color: rgb(255, 255, 255); color: rgb(234, 0, 30);&quot;&gt;We couldn’t process the request because the status of the associated Gift Commitment is Lapsed, Failing, or Closed, and the schedule type is None or not set.&lt;/em&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
@@ -1525,6 +1749,14 @@
             <name>NoneScheduleTypeSetErrorDisplayText</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em style=&quot;color: rgb(234, 0, 30); background-color: rgb(255, 255, 255);&quot;&gt;We couldn’t process the request because the schedule type of the associated Gift Commitment is either not set or set to None.&lt;/em&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
@@ -1540,6 +1772,14 @@
             <name>OnlyPausedSchduleErrorDisplayText</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;em style=&quot;color: rgb(234, 0, 30); background-color: rgb(255, 255, 255);&quot;&gt;We couldn’t process the request because the Gift Commitment has only paused schedules. Resume at least one of the paused schedules and try again.&lt;/em&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
@@ -1578,6 +1818,14 @@
                     <name>availableCommitmentsInfo</name>
                     <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-size: 13px;&quot;&gt;Only the gift commitments that are in Active, Draft, or Paused state are displayed.&lt;/em&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <fields>
                     <name>SelectGiftCommitmentDataTable</name>
@@ -1638,6 +1886,14 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1649,6 +1905,14 @@
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
