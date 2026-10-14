@@ -1,9 +1,14 @@
-<a href="https://githubsfdeploy.herokuapp.com?owner=FinDockLabs&repo=findock-for-fundraising-flows&ref=main">
-  <img alt="Deploy to Salesforce"
-       src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png"></a>
+<!-- INSTALL_LINK:START -->
+<a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001mo6nIAA" target="_blank" rel="noopener noreferrer"><img alt="Install in a production or Developer org" src="https://img.shields.io/badge/Install-Production%20or%20Developer%20org-00A1E0?style=for-the-badge"></a>
+<a href="https://test.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001mo6nIAA" target="_blank" rel="noopener noreferrer"><img alt="Install in a sandbox" src="https://img.shields.io/badge/Install-Sandbox-6B7A8F?style=for-the-badge"></a>
+
+Version 0.1.0-1
+<!-- INSTALL_LINK:END -->
+
+This application is distributed as an org-dependent unlocked package. Production installation requires a released package version; beta versions can be installed in sandboxes and Developer orgs.
 
 ```text
-NOTE: to be able to deploy this project to your Salesforce production environment your overall test code coverage needs to meet Salesforce thresholds.
+NOTE: for source deployments to your Salesforce production environment your overall test code coverage needs to meet Salesforce thresholds.
 Although this project has 100% coverage, existing custom code in your environment might push the overall coverage below the threshold. 
 ```
 
@@ -19,6 +24,7 @@ Supporting permissions are included.
 ## Requirements
 
 The prerequisites to deploy this repository are:
+- Salesforce Winter '27 or later
 - Fundraising enabled and configured in your Salesforce environment
 - The FinDock for Fundraising package is installed
 
@@ -64,10 +70,10 @@ quickActions/GiftCommitment.fd_upgrade_downgrade.quickAction
 ```
 
 ## Installation
-- make sure your user has permissions to all objects referenced by the components in this repository. This includes FinDock permissions and Fundraising permissions.
-- use `sfdx` to deploy a selection of or all components.
-- press the "Deploy to Salesforce" button at the top of this README and then press "Login to Salesforce" in the top right of your screen. Please note, the GitHub Salesforce Deploy Tool is provided open source by [andyinthecloud](http://andyinthecloud.com/category/githubsfdeploy/). No FinDock support is provided.
-- any other deployment method you prefer.
+1. Make sure your user has the required FinDock and Fundraising permissions.
+2. Install the package using the appropriate button above.
+3. Select **Install for Admins Only**.
+4. Activate both FinDock flows and complete the configuration below.
 
 ## Configuration
 - Assign the deployed Gift Commitment Lightning Record page to profiles or as organization default to include the custom Gift Commitment Management LWC component
