@@ -1,3 +1,5 @@
+# FinDock for Fundraising Flows
+
 <!-- INSTALL_LINK:START -->
 <a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001mo6nIAA" target="_blank" rel="noopener noreferrer"><img alt="Install in a production or Developer org" src="https://img.shields.io/badge/Install-Production%20or%20Developer%20org-00A1E0?style=for-the-badge"></a>
 <a href="https://test.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001mo6nIAA" target="_blank" rel="noopener noreferrer"><img alt="Install in a sandbox" src="https://img.shields.io/badge/Install-Sandbox-6B7A8F?style=for-the-badge"></a>
@@ -11,8 +13,6 @@ This application is distributed as an org-dependent unlocked package. Production
 NOTE: for source deployments to your Salesforce production environment your overall test code coverage needs to meet Salesforce thresholds.
 Although this project has 100% coverage, existing custom code in your environment might push the overall coverage below the threshold. 
 ```
-
-# FinDock for Fundraising Flows
 
 A quick description for what this repo contains:
 - FinDock versions of Salesforce Fundraising Flows (cloned & customised)
