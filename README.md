@@ -7,7 +7,7 @@
 Version 0.1.0-1
 <!-- INSTALL_LINK:END -->
 
-This application is distributed as an org-dependent unlocked package. Production installation requires a released package version; beta versions can be installed in sandboxes and Developer orgs.
+This application is distributed as an org-dependent unlocked package.
 
 ```text
 NOTE: for source deployments to your Salesforce production environment your overall test code coverage needs to meet Salesforce thresholds.
@@ -72,8 +72,7 @@ quickActions/GiftCommitment.fd_upgrade_downgrade.quickAction
 ## Installation
 1. Make sure your user has the required FinDock and Fundraising permissions.
 2. Install the package using the appropriate button above.
-3. Select **Install for Admins Only**.
-4. Activate both FinDock flows and complete the configuration below.
+3. Activate both FinDock flows and complete the configuration below.
 
 ## Configuration
 - Assign the deployed Gift Commitment Lightning Record page to profiles or as organization default to include the custom Gift Commitment Management LWC component
