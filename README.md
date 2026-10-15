@@ -7,11 +7,6 @@ Version 0.1.0-1
 
 This application is distributed as an org-dependent unlocked package.
 
-```text
-NOTE: for source deployments to your Salesforce production environment your overall test code coverage needs to meet Salesforce thresholds.
-Although this project has 100% coverage, existing custom code in your environment might push the overall coverage below the threshold. 
-```
-
 A quick description for what this repo contains:
 - FinDock versions of Salesforce Fundraising Flows (cloned & customised)
 - Quick Action buttons linked to FinDock versions of Flows
@@ -70,7 +65,11 @@ quickActions/GiftCommitment.fd_upgrade_downgrade.quickAction
 ## Installation
 1. Make sure your user has the required FinDock and Fundraising permissions.
 2. Install the package using the appropriate button above.
-3. Activate both FinDock flows and complete the configuration below.
+3. Activate `Update_Recurring_Gift_Commitment_Schedule_FinDock` and complete the configuration below. `Manage_Gift_Commitment_Schedules_FinDock` is supplied as Active.
+
+### Upgrading from a source deployment
+
+Before installing, back up your existing components and review any local customizations. Installation can overwrite components with matching API names and associate them with the package. Test the migration in a sandbox first. Uninstalling the package can remove these components.
 
 ## Configuration
 - Assign the deployed Gift Commitment Lightning Record page to profiles or as organization default to include the custom Gift Commitment Management LWC component
