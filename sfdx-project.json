@@ -1,9 +1,19 @@
 {
   "packageDirectories": [
-    { "path": "sfdx-source", "default": true }
+    {
+      "versionName": "Winter '27",
+      "versionNumber": "0.1.0.NEXT",
+      "path": "sfdx-source",
+      "default": true,
+      "package": "FinDock Fundraising Flows"
+    }
   ],
-  "name": "FindockFundraising",
+  "name": "FinDockFundraising",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "65.0"
+  "sourceApiVersion": "68.0",
+  "packageAliases": {
+    "FinDock Fundraising Flows": "0HoP400000002xtKAA",
+    "FinDock Fundraising Flows@0.1.0-1": "04tP4000001mo6nIAA"
+  }
 }

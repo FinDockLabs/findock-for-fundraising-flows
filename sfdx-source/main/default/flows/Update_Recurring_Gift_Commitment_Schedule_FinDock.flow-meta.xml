@@ -34,7 +34,7 @@
         <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
-    <apiVersion>67.0</apiVersion>
+    <apiVersion>68.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <description>Sets the parameters on UpdateGiftCommitmentSchedule such as StartDate and EndDate from the values of UpdateDatesScreen.</description>
@@ -611,7 +611,7 @@
         <description>Validate TransactionAmount formula for UpgradeDowngrade of gift commitment schedule.</description>
         <name>ValidateUpgradeDowngradeTransactionAmountFormula</name>
         <dataType>Boolean</dataType>
-        <expression>IF(({!TransactionAmount})&lt;1, false, true)</expression>
+        <expression>IF(({!TransactionAmount})&lt;0, false, true)</expression>
     </formulas>
     <interviewLabel>Update Recurring Gift Commitment Schedule {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Update Recurring Gift Commitment Schedule</label>
@@ -1487,7 +1487,7 @@
                     <inputParameters>
                         <name>recordId</name>
                         <value>
-                            <elementReference>UpdateDatesSelectSchdDataTable.firstSelectedRow.OutreachSourceCodeId</elementReference>
+                            <elementReference>UpdateDatesSelectSchdDataTable.firstSelectedRow.CampaignId</elementReference>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2329,7 +2329,7 @@
                         </width>
                     </styleProperties>
                     <validationRule>
-                        <errorMessage>Enter an amount that&apos;s greater than 0.</errorMessage>
+                        <errorMessage>Enter an amount that&apos;s greater than or equal to 0.</errorMessage>
                         <formulaExpression>{!ValidateUpgradeDowngradeTransactionAmountFormula}</formulaExpression>
                     </validationRule>
                 </fields>
@@ -2646,6 +2646,12 @@
                             <numberValue>1.0</numberValue>
                         </value>
                     </inputParameters>
+                    <inputParameters>
+                        <name>recordId</name>
+                        <value>
+                            <elementReference>UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.OutreachSourceCodeId</elementReference>
+                        </value>
+                    </inputParameters>
                     <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -2736,6 +2742,12 @@
                         <name>maxValues</name>
                         <value>
                             <numberValue>1.0</numberValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>recordId</name>
+                        <value>
+                            <elementReference>UpgradeDowngradeSelectSchdDataTable.firstSelectedRow.CampaignId</elementReference>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
