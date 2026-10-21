@@ -71,7 +71,7 @@
         <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
-    <apiVersion>67.0</apiVersion>
+    <apiVersion>68.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <description>Adds the ID of the current gift commitment record to the GiftCommitmentId variable.</description>
@@ -689,10 +689,10 @@
         <expression>IF(({!StartDate}&gt;{!EndDate}), false, true)</expression>
     </formulas>
     <formulas>
-        <description>Returns true if GiftTransactionAmount is greater than equal to one, else returns false.</description>
+        <description>Returns true if GiftTransactionAmount is greater than or equal to zero, else returns false.</description>
         <name>ValidateGiftTransactionAmountFormula</name>
         <dataType>Boolean</dataType>
-        <expression>IF(({!GiftTransactionAmount})&lt;1, false, true)</expression>
+        <expression>IF(({!GiftTransactionAmount})&lt;0, false, true)</expression>
     </formulas>
     <interviewLabel>Manage Gift Commitment Schedules {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Manage Gift Commitment Schedules</label>
@@ -997,6 +997,14 @@
             <name>CreateCustomGiftCommitmentScheduleScreenHeader</name>
             <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 24px;&quot;&gt;Create Custom Gift Commitment Schedules&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>CustomGiftCmtInformationSection</name>
@@ -1009,6 +1017,14 @@
                     <name>CustomGiftCommitmentNameText</name>
                     <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Gift Commitment Name&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 12px;&quot;&gt;{!GetGiftCmtFromGiftCommitmentId.Name}&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1025,6 +1041,14 @@
                     <name>CustomExpectedTotalGiftCmtAmountDisplayText</name>
                     <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Expected Total Gift Commitment Amount&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 12px;&quot;&gt;{!GetGiftCmtFromGiftCommitmentId.ExpectedTotalCmtAmount}&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1041,6 +1065,14 @@
                     <name>CustomExpectedGiftCmtEndDateDisplayText</name>
                     <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Gift Commitment Expected End Date&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 12px;&quot;&gt;{!GetGiftCmtFromGiftCommitmentId.ExpectedEndDate}&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1052,16 +1084,40 @@
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>CreateCustomGiftCmtSchdLabelDisplayText</name>
             <fieldText>&lt;p&gt;&lt;em style=&quot;font-size: 13px;&quot;&gt;Create a custom Gift Commitment Schedule. A custom Gift Commitment Schedule creates one Gift Transaction with the due date that&apos;s the same as the start date of the schedule.&lt;/em&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>CustomMultiCurrencyInfoDisplayText</name>
             <fieldText>&lt;p&gt;&lt;em&gt;The currency of the transaction amount matches the currency in the associated gift commitment record.&lt;/em&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>CustomGiftCommitmentScheduleInformationSection</name>
@@ -1327,7 +1383,7 @@
                         </width>
                     </styleProperties>
                     <validationRule>
-                        <errorMessage>Enter an amount that&apos;s greater than 0.</errorMessage>
+                        <errorMessage>Enter an amount that&apos;s greater than or equal to 0.</errorMessage>
                         <formulaExpression>{!ValidateGiftTransactionAmountFormula}</formulaExpression>
                     </validationRule>
                 </fields>
